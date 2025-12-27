@@ -62,5 +62,35 @@ article.rounded-lg.border {
 }
 
 html.dark article.rounded-lg.border {
-    background-color: #262626 !important; /* カードを少し明るくして立体感を出す */
+    background-color: #262626 !important;
+    }
+    
+    /* ヘッダー内のロゴ画像をモバイル表示で小さくするためのスタイル */
+    .main-menu a.flex img.logo {
+      max-height: 2.5rem !important;
+      /* モバイルでは小さく */
+      max-width: 2.5rem !important;
+    }
+    
+    @media (min-width: 640px) {
+      .main-menu a.flex img.logo {
+        max-height: 3.5rem !important;
+        /* デスクトップでは少し大きく */
+        max-width: 3.5rem !important;
+      }
+    }
+    
+    /* ヘッダータイトルのモバイル調整 */
+    .main-menu a.text-base {
+      white-space: nowrap !important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 180px;
+      /* モバイルでの表示幅を制限 */
+    }
+    
+    @media (min-width: 640px) {
+      .main-menu a.text-base {
+        max-width: none;
+      }
 }
