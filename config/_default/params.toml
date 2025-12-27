@@ -16,7 +16,7 @@ logo = "logo.png"
 mainSections = ["posts"]
 
 [header]
-  layout = "basic"
+  layout = "fixed-fill-blur"
 
 [footer]
   showMenu = true
