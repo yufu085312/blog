@@ -26,10 +26,11 @@ mainSections = ["posts"]
   showScrollToTop = true
 
 [homepage]
-  layout = "page"
+  layout = "background"
+  homepageImage = "hero.png"
   showRecent = true
-  showRecentItems = 5
-  showMoreLink = false
+  showRecentItems = 6
+  showMoreLink = true
   cardView = true
 
 [article]

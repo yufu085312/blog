@@ -1,0 +1,58 @@
+{{ define "main" }}
+  {{ .Scratch.Set "scope" "list" }}
+  
+  {{/* 共通背景パーツの挿入 */}}
+  {{ partial "background-hero.html" . }}
+
+  <div class="relative mx-auto max-w-7xl px-6 py-16 text-center">
+    {{/* Header */}}
+    <header>
+      {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs | default false) }}
+        {{ partial "breadcrumbs.html" . }}
+      {{ end }}
+      <h1 class="mt-5 text-4xl font-extrabold text-neutral-800 dark:text-neutral-100 drop-shadow-md">
+        {{ .Title }}
+      </h1>
+      <div class="mt-1 mb-8 text-base text-neutral-600 dark:text-neutral-400">
+        {{ partial "article-meta/list.html" (dict "context" . "scope" "single") }}
+      </div>
+    </header>
+
+    {{/* Description (markdown content) */}}
+    <section class="prose dark:prose-invert max-w-none text-center mb-12">
+      <div class="inline-block text-left w-full max-w-prose">
+        {{ .Content }}
+      </div>
+    </section>
+
+    {{/* Article Grid */}}
+    <div class="recent-articles-section text-left">
+      {{ if gt .Pages 0 }}
+        {{ $cardView := .Params.cardView | default (site.Params.list.cardView | default false) }}
+        {{ $groupByYear := .Params.groupByYear | default (site.Params.list.groupByYear | default false) }}
+        
+        {{ if $cardView }}
+          <section class="w-full grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {{ range .Pages }}
+              {{ partial "article-link/card.html" . }}
+            {{ end }}
+          </section>
+        {{ else }}
+          <section class="space-y-10 w-full">
+            {{ range .Pages }}
+              {{ partial "article-link/simple.html" . }}
+            {{ end }}
+          </section>
+        {{ end }}
+      {{ else }}
+        <section class="mt-10 prose dark:prose-invert text-center">
+          <p class="py-8 border-t">
+            <em>{{ i18n "list.no_articles" | emojify }}</em>
+          </p>
+        </section>
+      {{ end }}
+    </div>
+
+    {{ partial "pagination.html" . }}
+  </div>
+{{ end }}

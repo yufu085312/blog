@@ -1,0 +1,66 @@
+/* ホームページ・ヒーロー画像のスイッチングと質感調整 */
+.hero-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1000px; /* テーマ標準の高さに合わせる */
+    z-index: -10;
+    overflow: hidden;
+}
+
+.hero-img-dark, .hero-img-light {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.hero-img-dark { 
+    display: none !important;
+    filter: brightness(0.5) contrast(1.1) !important;
+}
+
+.hero-img-light { 
+    display: block !important;
+    filter: brightness(1.0) !important;
+}
+
+/* モード切り替え */
+html.dark .hero-img-dark { display: block !important; }
+html.dark .hero-img-light { display: none !important; }
+
+/* 質感調整のためのオーバーレイ */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.hero-overlay-dark {
+    display: none !important;
+    background: linear-gradient(to top, #171717 0%, rgba(23, 23, 23, 0.4) 50%, transparent 100%) !important;
+}
+
+.hero-overlay-light {
+    display: block !important;
+    background: linear-gradient(to top, #ffffff 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%) !important;
+}
+
+html.dark .hero-overlay-dark { display: block !important; }
+html.dark .hero-overlay-light { display: none !important; }
+
+/* 記事カードの不透明化 (セクション全体は透過のまま) */
+.recent-articles-section {
+    position: relative;
+    z-index: 10;
+}
+
+/* カード自体の背景 */
+article.rounded-lg.border {
+    background-color: #ffffff !important;
+}
+
+html.dark article.rounded-lg.border {
+    background-color: #262626 !important; /* カードを少し明るくして立体感を出す */
+}

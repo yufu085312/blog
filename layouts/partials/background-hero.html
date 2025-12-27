@@ -1,0 +1,16 @@
+{{/* 背景コンテナ: CSS (custom.css) で精密に制御 */}}
+<div class="hero-container">
+  {{ $imgDark := resources.Get "hero.png" }}
+  {{ $imgLight := resources.Get "hero-light.png" }}
+  
+  {{ if $imgDark }}
+    <img class="hero-img-dark nozoom shadow-none" src="{{ $imgDark.RelPermalink }}" role="presentation">
+  {{ end }}
+
+  {{ if $imgLight }}
+    <img class="hero-img-light nozoom shadow-none" src="{{ $imgLight.RelPermalink }}" role="presentation">
+  {{ end }}
+
+  <div class="hero-overlay hero-overlay-dark"></div>
+  <div class="hero-overlay hero-overlay-light"></div>
+</div>
