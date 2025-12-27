@@ -1,0 +1,16 @@
+languageCode = "ja"
+languageName = "日本語"
+weight = 1
+title = "エンジニア開発ブログ"
+
+[params]
+  displayName = "JA"
+  isoCode = "ja"
+  rtl = false
+  dateFormat = "2006年1月2日"
+  description = "Hugo と Blowfish で構築されたブログです"
+
+[params.author]
+  name = "Your Name"
+  headline = "ブログへようこそ"
+  bio = "Hugo と Blowfish を使ったブログです"
