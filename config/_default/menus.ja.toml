@@ -7,3 +7,13 @@
   name = "運営者情報"
   url = "/about/"
   weight = 20
+
+[[main]]
+  name = "お問い合わせ"
+  url = "/contact/"
+  weight = 30
+
+[[footer]]
+  name = "プライバシーポリシー"
+  url = "/privacy/"
+  weight = 10
