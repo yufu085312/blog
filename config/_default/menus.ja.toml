@@ -1,0 +1,9 @@
+[[main]]
+  name = "ホーム"
+  url = "/"
+  weight = 10
+
+[[main]]
+  name = "運営者情報"
+  url = "/about/"
+  weight = 20
