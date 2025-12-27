@@ -1,5 +1,5 @@
 theme = "blowfish"
-baseURL = "https://example.org/"
+baseURL = "https://yu-fu.site/"
 defaultContentLanguage = "ja"
 
 enableRobotsTXT = true
