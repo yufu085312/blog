@@ -1,0 +1,21 @@
+{
+  "name": "エンジニア開発ブログ",
+  "short_name": "ゆーふーブログ",
+  "description": "Web開発、サーバー技術、全技術領域を扱うエンジニアブログ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

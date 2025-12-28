@@ -8,6 +8,7 @@
 colorScheme = "blowfish"
 defaultAppearance = "dark"
 autoSwitchAppearance = true
+defaultSocialImage = "hero.png"
 
 enableSearch = true
 enableCodeCopy = true
@@ -57,3 +58,6 @@ mainSections = ["posts"]
   showCards = true
   groupByYear = true
   cardView = true
+
+[verification]
+  google = "b5c719ee8bf2c798"

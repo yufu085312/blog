@@ -9,6 +9,7 @@ title = "エンジニア開発ブログ"
   rtl = false
   dateFormat = "2006年1月2日"
   description = "Web開発、サーバー技術、全技術領域を扱うエンジニアブログ"
+keywords = ["エンジニアブログ", "Web開発", "個人開発", "技術ブログ", "テックブログ"]
 
 [params.author]
   name = "ゆーふー"
