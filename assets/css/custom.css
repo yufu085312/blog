@@ -94,3 +94,79 @@ html.dark article.rounded-lg.border {
         max-width: none;
       }
 }
+
+/* 記事本文の読みやすさ向上 */
+.prose p {
+  margin-top: 1.5em !important;
+  margin-bottom: 1.5em !important;
+  line-height: 1.8;
+}
+
+.prose blockquote {
+  border-left-width: 4px !important;
+  border-left-color: #3b82f6 !important;
+  /* 青色のアクセント */
+  background-color: rgba(59, 130, 246, 0.05) !important;
+  font-style: italic;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+html.dark .prose blockquote {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+/* H2見出しの装飾強化 */
+.prose h2 {
+  border-left: 6px solid #3b82f6 !important;
+  border-bottom: 2px solid #e5e7eb !important;
+  padding: 0.5rem 0 0.5rem 1rem !important;
+  margin-top: 3rem !important;
+  margin-bottom: 1.5rem !important;
+  font-weight: 800 !important;
+}
+
+html.dark .prose h2 {
+  border-bottom-color: #404040 !important;
+}
+
+/* H3見出し（サブ項目）も少し控えめに強調 */
+.prose h3 {
+  border-bottom: 1px solid #e5e7eb !important;
+  padding-bottom: 0.3rem !important;
+  margin-top: 2rem !important;
+}
+
+html.dark .prose h3 {
+  border-bottom-color: #404040 !important;
+}
+
+/* 記事内画像のサイズ調整と装飾 */
+.prose img {
+  max-width: 80% !important;
+  height: auto !important;
+  margin: 2rem auto !important;
+  display: block !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.prose img:hover {
+  transform: scale(1.02);
+}
+
+/* モバイル表示では幅を100%に近づけて見やすく */
+@media (max-width: 640px) {
+  .prose img {
+    max-width: 95% !important;
+    margin: 1.5rem auto !important;
+  }
+}
+
+/* ギャラリー内の画像は個別に調整されるため制限を解除 */
+.prose .gallery img {
+  max-width: 100% !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
