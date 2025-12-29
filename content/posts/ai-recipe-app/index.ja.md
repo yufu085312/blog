@@ -3,6 +3,7 @@ title: "🧠 冷蔵庫の余り物を“絶品料理”に変えるAIレシピ�
 date: 2025-12-27T23:35:00+09:00
 draft: false
 description: "冷蔵庫の余り食材から、Google Gemini AI が最適なレシピを生成してくれるWebアプリ「Leftover Recipe AI」を開発しました。"
+summary: "冷蔵庫の余り食材からAIが最適なレシピを提案。Vite + Gemini APIで実現した、食品ロスを減らすための個人開発プロジェクトを紹介します。"
 tags: ["AI", "Gemini", "個人開発", "料理", "JavaScript"]
 categories: ["プロジェクト"]
 showHero: true
