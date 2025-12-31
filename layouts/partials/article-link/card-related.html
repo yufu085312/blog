@@ -1,0 +1,96 @@
+{{/* Used by
+  1. layouts/partials/related.html (related articles in single page)
+*/}}
+{{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
+
+{{ $page := .Page }}
+{{ $featured := "" }}
+{{ $featuredURL := "" }}
+{{/* frontmatter */}}
+{{ with $page }}
+  {{ with .Params.featureimage }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ if site.Params.hotlinkFeatureImage }}
+        {{ $featuredURL = . }}
+      {{ else }}
+        {{ $featured = resources.GetRemote . }}
+      {{ end }}
+    {{ else }}
+      {{ $featured = resources.Get . }}
+    {{ end }}
+  {{ end }}
+
+  {{/* page resources */}}
+  {{ if not (or $featured $featuredURL) }}
+    {{ $images := .Resources.ByType "image" }}
+    {{ range slice "*feature*" "*cover*" "*thumbnail*" }}
+      {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/* fallback to default */}}
+  {{ if not (or $featured $featuredURL) }}
+    {{ $default := site.Store.Get "defaultFeaturedImage" }}
+    {{ if $default.url }}
+      {{ $featuredURL = $default.url }}
+    {{ else if $default.obj }}
+      {{ $featured = $default.obj }}
+    {{ end }}
+  {{ end }}
+
+  {{/* generate image URL if not hotlink */}}
+  {{ if not $featuredURL }}
+    {{ with $featured }}
+      {{ $featuredURL = .RelPermalink }}
+      {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+        {{ $featuredURL = (.Resize "600x").RelPermalink }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+
+<article
+  class="relative min-h-full w-full min-w-0 overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600 flex flex-col items-start justify-start">
+  {{ with $featuredURL }}
+    <div class="flex-none relative overflow-hidden w-full min-w-0" style="aspect-ratio: 16 / 9;">
+      <img
+        src="{{ . }}"
+        role="presentation"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+        class="not-prose absolute inset-0 w-full h-full object-cover rounded-t-lg">
+    </div>
+  {{ end }}
+  {{ if and .Draft .Site.Params.article.showDraftLabel }}
+    <span class="absolute top-0 right-0 m-2">
+      {{ partial "badge.html" (i18n "article.draft" | emojify) }}
+    </span>
+  {{ end }}
+  <div class="px-4 pb-4 pt-3 flex-1 flex flex-col items-start justify-start w-full">
+    <a
+      {{ with $page.Params.externalUrl }}
+        href="{{ . }}" target="_blank" rel="external"
+      {{ else }}
+        href="{{ $page.RelPermalink }}"
+      {{ end }}
+      class="not-prose !m-0 !p-0 !border-none !ps-0 block w-full flex-none before:absolute before:inset-0">
+      <div class="text-base font-bold text-neutral-800 dark:text-neutral !m-0 !p-0 !border-none !ps-0 !leading-tight !block !h-auto overflow-hidden max-h-[3em]">
+        {{ .Title | emojify }}
+        {{ if .Params.externalUrl }}
+          <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
+            <span class="rtl:hidden">&#8599;</span>
+            <span class="ltr:hidden">&#8598;</span>
+          </span>
+        {{ end }}
+      </div>
+    </a>
+    <div class="prose dark:prose-invert text-xs line-clamp-2 !mt-1 !mb-2 shrink-0">
+      {{ .Summary | plainify }}
+    </div>
+    <div class="text-[10px] text-neutral-500 dark:text-neutral-400 mt-auto">
+      {{ partial "meta/date.html" .Date }}
+    </div>
+  </div>
+</article>

@@ -13,5 +13,9 @@ keywords = ["エンジニアブログ", "Web開発", "個人開発", "技術ブ�
 
 [params.author]
   name = "ゆーふー"
-  headline = "Web・サーバー・全技術領域"
-  bio = "Web、サーバーを中心に全技術領域をカバーするエンジニアブログ。個人開発や技術的な学びを発信します。"
+  image = "logo.png"
+  headline = "Webエンジニア / 技術ブロガー"
+  bio = "Web開発、インフラ、AI技術に興味があるエンジニアです。日々の学びを記録しています。"
+  links = [
+    { x-twitter = "https://x.com/yufu_net" },
+  ]

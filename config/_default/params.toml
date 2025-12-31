@@ -12,6 +12,7 @@ defaultSocialImage = "hero.png"
 
 enableSearch = true
 enableCodeCopy = true
+enableStructuredBreadcrumbs = true
 logo = "logo.png"
 
 mainSections = ["posts"]
@@ -36,10 +37,11 @@ mainSections = ["posts"]
 
 [article]
   showDate = true
-  showDateUpdated = false
-  showAuthor = false
+  showDateUpdated = true
+  showAuthor = true
+  showAuthorBottom = true
   showHero = false
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showDraftLabel = true
   showEdit = false
   showHeadingAnchors = true
@@ -49,11 +51,13 @@ mainSections = ["posts"]
   showTaxonomies = true
   showWordCount = true
   showComments = false
+  showRelatedContent = true
+  relatedContentLimit = 3
   sharingLinks = ["twitter", "facebook", "line", "linkedin", "link"]
 
 [list]
   showHero = false
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showSummary = true
   showTableOfContents = false
   showCards = true

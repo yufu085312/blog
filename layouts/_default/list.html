@@ -4,7 +4,7 @@
   {{/* 共通背景パーツの挿入 */}}
   {{ partial "background-hero.html" . }}
 
-  <div class="relative mx-auto max-w-7xl px-6 py-16 text-center">
+  <div class="relative mx-auto py-16 text-center">
     {{/* Header */}}
     <header>
       {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs | default false) }}
@@ -32,7 +32,7 @@
         {{ $groupByYear := .Params.groupByYear | default (site.Params.list.groupByYear | default false) }}
         
         {{ if $cardView }}
-          <section class="w-full grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             {{ range .Pages }}
               {{ partial "article-link/card.html" . }}
             {{ end }}
