@@ -4,7 +4,8 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 1000px; /* テーマ標準の高さに合わせる */
+    height: 100vh;
+      /* テーマ標準の高さに合わせる -> 画面全体に拡張 */
     z-index: -10;
     overflow: hidden;
 }
