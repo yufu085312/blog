@@ -7,6 +7,8 @@ enableGitInfo = true
 summaryLength = 30
 hasCJKLanguage = true
 
+[markup.goldmark.renderer]
+  unsafe = true
 [related]
   threshold = 1
   includeNewer = true
