@@ -21,12 +21,13 @@
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
         {{ .Title | emojify | safeHTML }}
       </h1>
+      {{ if not (.Params.showAuthorBottom | default (site.Params.article.showAuthorBottom | default false)) }}
+      {{ template "SingleAuthor" . }}
+      {{ end }}
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         {{ partial "article-meta/basic.html" (dict "context" . "scope" "single") }}
       </div>
-      {{ if not (.Params.showAuthorBottom | default (site.Params.article.showAuthorBottom | default false)) }}
-        {{ template "SingleAuthor" . }}
-      {{ end }}
+
     </header>
 
     {{/* Body */}}

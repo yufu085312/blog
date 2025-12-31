@@ -3,8 +3,26 @@ baseURL = "https://yu-fu.site/"
 defaultContentLanguage = "ja"
 
 enableRobotsTXT = true
+enableGitInfo = true
 summaryLength = 30
 hasCJKLanguage = true
+
+[related]
+  threshold = 1
+  includeNewer = true
+  toLower = true
+  [[related.indices]]
+    name = "categories"
+    weight = 100
+  [[related.indices]]
+    name = "tags"
+    weight = 80
+  [[related.indices]]
+    name = "date"
+    weight = 10
+
+[frontmatter]
+  lastmod = [":git", "lastmod", "date", "publishDate"]
 
 buildDrafts = false
 buildFuture = false
