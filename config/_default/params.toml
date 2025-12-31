@@ -66,3 +66,6 @@ mainSections = ["posts"]
 
 [verification]
   google = "b5c719ee8bf2c798"
+
+[advertisement]
+  adsense = "ca-pub-8099321151173571"
