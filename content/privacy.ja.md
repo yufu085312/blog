@@ -2,6 +2,8 @@
 title: "プライバシーポリシー"
 layout: "page"
 showDate: false
+sitemap:
+  priority: 0.5
 ---
 
 ## 個人情報の利用目的

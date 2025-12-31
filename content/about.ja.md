@@ -3,6 +3,8 @@ title: "運営者情報"
 date: 2025-12-27T23:53:00+09:00
 layout: "page"
 showDate: false
+sitemap:
+  priority: 0.5
 ---
 
 ## ご挨拶

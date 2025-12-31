@@ -2,6 +2,8 @@
 title: "お問い合わせ"
 layout: "page"
 showDate: false
+sitemap:
+  priority: 0.5
 ---
 
 当ブログへのお問い合わせは、以下のSNSのダイレクトメッセージ、または各プラットフォームにて受け付けております。
