@@ -8,12 +8,12 @@
 colorScheme = "blowfish"
 defaultAppearance = "dark"
 autoSwitchAppearance = true
-defaultSocialImage = "hero.png"
+defaultSocialImage = "hero.webp"
 
 enableSearch = true
 enableCodeCopy = true
 enableStructuredBreadcrumbs = true
-logo = "logo.png"
+logo = "logo.webp"
 
 mainSections = ["posts"]
 
@@ -29,7 +29,7 @@ mainSections = ["posts"]
 
 [homepage]
   layout = "background"
-  homepageImage = "hero.png"
+  homepageImage = "hero.webp"
   showRecent = true
   showRecentItems = 6
   showMoreLink = true

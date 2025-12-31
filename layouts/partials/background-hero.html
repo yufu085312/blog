@@ -1,7 +1,7 @@
 {{/* 背景コンテナ: CSS (custom.css) で精密に制御 */}}
 <div class="hero-container">
-  {{ $imgDark := resources.Get "hero.png" }}
-  {{ $imgLight := resources.Get "hero-light.png" }}
+  {{ $imgDark := resources.Get "hero.webp" }}
+  {{ $imgLight := resources.Get "hero-light.webp" }}
   
   {{ if $imgDark }}
     <img class="hero-img-dark nozoom shadow-none" src="{{ $imgDark.RelPermalink }}" role="presentation">

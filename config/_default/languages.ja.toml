@@ -13,7 +13,7 @@ keywords = ["エンジニアブログ", "Web開発", "個人開発", "技術ブ�
 
 [params.author]
   name = "ゆーふー"
-  image = "logo.png"
+  image = "logo.webp"
   headline = "Webエンジニア / 技術ブロガー"
   bio = "Web開発、インフラ、AI技術に興味があるエンジニアです。日々の学びを記録しています。"
   links = [
