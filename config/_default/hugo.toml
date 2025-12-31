@@ -24,7 +24,7 @@ hasCJKLanguage = true
     weight = 10
 
 [frontmatter]
-  lastmod = [":git", "lastmod", "date", "publishDate"]
+  lastmod = ["lastmod", "date", "publishDate"]
 
 buildDrafts = false
 buildFuture = false
