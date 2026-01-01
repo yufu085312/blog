@@ -9,6 +9,7 @@ colorScheme = "blowfish"
 defaultAppearance = "dark"
 autoSwitchAppearance = true
 defaultSocialImage = "hero.webp"
+themeColor = "#3b82f6"
 
 enableSearch = true
 enableCodeCopy = true
