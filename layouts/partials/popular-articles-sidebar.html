@@ -1,0 +1,80 @@
+{{/* 固定ページ（運営者情報、お問い合わせ、プライバシーポリシーなど）では表示しない */}}
+{{ if ne .Layout "page" }}
+  {{ if .Params.showPopularArticles | default (.Site.Params.article.showPopularArticles | default false) }}
+    {{ $popularLimit := .Site.Params.article.popularArticlesLimit | default 3 }}
+    {{ $popularTitle := .Site.Params.article.popularArticlesTitle | default "人気記事TOP3" }}
+    
+    {{/* 閲覧数ベースの記事URLリストを読み込む */}}
+    {{ $popularUrls := site.Data.popular_articles | default slice }}
+    {{ $popularArticles := slice }}
+
+    {{ if $popularUrls }}
+      {{/* JSONデータがある場合はURLに一致する記事を取得 */}}
+      {{ range $url := $popularUrls }}
+        {{ range where site.RegularPages "RelPermalink" $url }}
+          {{ $popularArticles = $popularArticles | append . }}
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      {{/* JSONデータがない場合は従来通りpopularRankを使用 */}}
+      {{ range where site.RegularPages "Type" "in" site.Params.mainSections }}
+        {{ if .Params.popularRank }}
+          {{ $popularArticles = $popularArticles | append . }}
+        {{ end }}
+      {{ end }}
+      {{ $popularArticles = sort $popularArticles ".Params.popularRank" }}
+    {{ end }}
+
+    {{/* 指定された件数に制限 */}}
+    {{ $popularArticles = first $popularLimit $popularArticles }}
+    
+    {{ with $popularArticles }}
+      <div class="popular-articles-sidebar mt-8">
+        <h3 class="text-lg font-bold mb-4 text-neutral-900 dark:text-neutral-100">
+          {{ $popularTitle | emojify }}
+        </h3>
+        
+        <div class="space-y-3">
+          {{ range $index, $article := . }}
+            <a href="{{ $article.RelPermalink }}" class="popular-article-card block">
+              <article class="popular-article-item">
+                {{/* アイキャッチ画像 */}}
+                <div class="popular-thumbnail">
+                  {{ $thumbnail := "" }}
+                  {{ with $article.Resources.GetMatch "featured*" }}
+                    {{ $thumbnail = .Resize "200x200" }}
+                  {{ end }}
+                  
+                  {{ if $thumbnail }}
+                    <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $article.Title }}" loading="lazy">
+                  {{ else }}
+                    <div class="popular-rank-fallback">
+                      <span class="rank-number">{{ add $index 1 }}</span>
+                    </div>
+                  {{ end }}
+                  
+                  <div class="popular-rank-badge">
+                    {{ add $index 1 }}
+                  </div>
+                </div>
+                
+                {{/* 記事情報 */}}
+                <div class="popular-content">
+                  <h4 class="popular-title">
+                    {{ $article.Title | emojify | safeHTML }}
+                  </h4>
+                  
+                  <div class="popular-meta">
+                    <time datetime="{{ $article.Date.Format "2006-01-02" }}">
+                      {{ $article.Date.Format "2006/01/02" }}
+                    </time>
+                  </div>
+                </div>
+              </article>
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  {{ end }}
+{{ end }}

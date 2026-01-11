@@ -55,6 +55,9 @@ mainSections = ["posts"]
   showRelatedContent = true
   relatedContentLimit = 3
   sharingLinks = ["twitter", "facebook", "line", "linkedin", "link"]
+  showPopularArticles = true
+  popularArticlesLimit = 3
+  popularArticlesTitle = "人気記事TOP3"
 
 [list]
   showHero = false

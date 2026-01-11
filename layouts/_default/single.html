@@ -14,7 +14,7 @@
     {{ end }}
 
     {{/* Header */}}
-    <header id="single_header" class="mt-5 max-w-prose">
+    <header id="single_header" class="mt-5 max-w-full">
       {{ if .Params.showBreadcrumbs | default (site.Params.article.showBreadcrumbs | default false) }}
         {{ partial "breadcrumbs.html" . }}
       {{ end }}
@@ -37,19 +37,23 @@
       {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
       {{ $topClass := cond (hasPrefix site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
       {{ if $showToc }}
-        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+        <aside class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-xl">
           <div class="toc ps-5 print:hidden lg:sticky {{ $topClass }}">
             {{ if $showToc }}
               {{ partial "toc.html" . }}
             {{ end }}
-          </div>
-        </div>
+            {{/* 人気記事ランキングサイドバー (PC版のみ) */}}
+            <div class="hidden lg:block">
+              {{ partial "popular-articles-sidebar.html" . }}
+            </div>
+            </div>
+        </aside>
       {{ end }}
 
 
       <div class="min-w-0 min-h-0 max-w-fit">
         {{ partial "series/series.html" . }}
-        <div class="article-content max-w-prose mb-20">
+        <div class="article-content max-w-full mb-20">
           {{ .Content }}
           {{ $defaultReplyByEmail := site.Params.replyByEmail }}
           {{ $replyByEmail := default $defaultReplyByEmail .Params.replyByEmail }}
@@ -69,7 +73,13 @@
         {{ end }}
         {{ partial "series/series-closed.html" . }}
         {{ partial "sharing-links.html" . }}
-        {{ partial "related.html" . }}
+        {{ if ne .Layout "page" }}
+          {{ partial "related.html" . }}
+        {{ end }}
+        {{/* 人気記事ランキング (SP版のみ) */}}
+        <div class="block lg:hidden">
+          {{ partial "popular-articles-sidebar.html" . }}
+        </div>
       </div>
 
       {{ $translations := .AllTranslations }}
@@ -91,7 +101,7 @@
     </section>
 
     {{/* Footer */}}
-    <footer class="pt-8 max-w-prose print:hidden">
+    <footer class="pt-8 max-w-full print:hidden">
       {{ partial "article-pagination.html" . }}
       {{ if .Params.showComments | default (site.Params.article.showComments | default false) }}
         {{ if templates.Exists "partials/comments.html" }}

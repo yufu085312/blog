@@ -32,5 +32,17 @@
 
 {{/* 記事一覧セクション: 背景を透明にして背景画像が見えるようにするか、馴染ませる */}}
 <section class="recent-articles-section relative z-10 pt-10">
-  {{ partial "recent-articles/main.html" . }}
+  <div class="flex flex-col lg:flex-row lg:items-start mt-8">
+    <div class="flex-grow min-w-0">
+      <section>
+        {{ partial "recent-articles/main.html" . }}
+      </section>
+      </div>
+      
+      <aside class="w-full lg:w-1/6 lg:ps-8 flex-shrink-0 mt-8 lg:mt-0">
+        <div class="lg:sticky lg:top-10">
+          {{ partial "popular-articles-sidebar.html" . }}
+        </div>
+      </aside>
+      </div>
 </section>
