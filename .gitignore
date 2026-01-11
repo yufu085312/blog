@@ -13,3 +13,11 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Secrets and credentials
+ga4-creds.json
+.env
+
+# Environments
+venv/
+.venv/
