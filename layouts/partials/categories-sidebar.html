@@ -1,0 +1,23 @@
+{{/* カテゴリーサイドバー */}}
+{{ if ne .Layout "page" }}
+  {{ $categories := .Site.Taxonomies.categories }}
+  {{ if $categories }}
+    <div class="categories-sidebar mt-8">
+      <h3 class="text-lg font-bold mb-4 text-neutral-900 dark:text-neutral-100">
+        📂 カテゴリー
+      </h3>
+      
+      <div class="category-grid">
+        {{ range $name, $taxonomy := $categories }}
+          {{ $count := len $taxonomy.Pages }}
+          <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}/" class="category-tag-link">
+            <div class="category-tag-item">
+              <span class="category-name">{{ $name }}</span>
+              <span class="category-count">{{ $count }}</span>
+            </div>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+{{ end }}
