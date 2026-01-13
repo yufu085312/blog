@@ -9,9 +9,15 @@ sitemap:
 
 ## ご挨拶
 
-「エンジニア開発ブログ」へお越しいただき、誠にありがとうございます。
-
-運営者の **ゆーふー** と申します。
+<div class="flex flex-col md:flex-row items-center gap-8 mb-8">
+  <div class="flex-shrink-0">
+    <img src="/author.png" alt="ゆーふー" style="width: 120px; height: 120px;" class="rounded-full border-4 border-blue-100 shadow-lg object-cover">
+  </div>
+  <div>
+    <p class="text-xl font-bold mb-2">「エンジニア技術ブログ」へお越しいただき、誠にありがとうございます。</p>
+    <p class="text-xl font-bold mb-2">運営者の ゆーふー と申します。</p>
+  </div>
+</div>
 
 当ブログは、主にWeb開発やインフラ技術に関する知見を共有する技術ブログです。読者の皆様の学習や問題解決の一助となれば幸いです。
 

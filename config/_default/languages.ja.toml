@@ -1,19 +1,19 @@
 languageCode = "ja"
 languageName = "日本語"
 weight = 1
-title = "エンジニア開発ブログ"
+title = "エンジニア技術ブログ"
 
 [params]
   displayName = "JA"
   isoCode = "ja"
   rtl = false
   dateFormat = "2006年1月2日"
-  description = "Web開発、サーバー技術、全技術領域を扱うエンジニアブログ"
+  description = "Webエンジニア / 技術ブロガー。Next.js、React、Go、Docker、セキュリティなど、Web開発・サーバー技術・個人開発に関する実践的な技術記事を発信しています。"
 keywords = ["エンジニアブログ", "Web開発", "個人開発", "技術ブログ", "テックブログ"]
 
 [params.author]
   name = "ゆーふー"
-  image = "logo.webp"
+  image = "author.png"
   headline = "Webエンジニア / 技術ブロガー"
   bio = "Web開発、インフラ、AI技術に興味があるエンジニアです。日々の学びを記録しています。"
   links = [
