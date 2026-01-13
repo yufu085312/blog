@@ -1,4 +1,4 @@
-# エンジニア開発ブログ (yu-fu.site)
+# エンジニア技術ブログ (yu-fu.site)
 
 Hugo と Blowfish テーマを使用した個人ブログプロジェクトです。
 GitHub Actions / Cloudflare Pages を通じて自動デプロイされています。
