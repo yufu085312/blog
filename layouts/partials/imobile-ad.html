@@ -1,26 +1,11 @@
-<!-- i-mobile 広告 -->
-<div class="imobile-ad-container mt-12 flex flex-col items-center">
-  <span class="text-xs text-neutral-400 mb-2 font-medium tracking-wider">
-    ADVERTISEMENT
-  </span>
-  
-  <!-- 広告描画先 -->
-  <div id="imobile-ad" class="flex justify-center max-w-full overflow-hidden"></div>
-  </div>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // 二重描画防止
-    var adEl = document.getElementById("imobile-ad");
-    if (!adEl || adEl.children.length > 0) return;
+<div id="imobile-ad" class="flex justify-center my-4">
+  <script async src="https://imp-adedge.i-mobile.co.jp/script/v1/spot.js?20220104"></script>
+  <script>
+      (function () {
+        // 画面幅 853px 以上を PC と判定
+        const isPC = window.matchMedia("(min-width: 853px)").matches;
 
-    // i-mobile script を動的に読み込む
-    var script = document.createElement("script");
-    script.src = "https://imp-adedge.i-mobile.co.jp/script/v1/spot.js?20220104";
-    script.onload = function () {
-      var isPC = window.matchMedia("(min-width: 853px)").matches;
-
-      window.adsbyimobile = window.adsbyimobile || [];
-      window.adsbyimobile.push(
+      (window.adsbyimobile = window.adsbyimobile || []).push(
         isPC
           ? {
             pid: 84444,
@@ -39,8 +24,6 @@
             elementid: "imobile-ad"
           }
       );
-    };
-
-    document.body.appendChild(script);
-  });
-</script>
+      })();
+    </script>
+</div>
