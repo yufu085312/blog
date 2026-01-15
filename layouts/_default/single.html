@@ -74,6 +74,7 @@
         {{ partial "series/series-closed.html" . }}
         {{ partial "sharing-links.html" . }}
         {{ if ne .Layout "page" }}
+          {{ partial "imobile-post-banner.html" . }}
           {{ partial "related.html" . }}
         {{ end }}
         {{/* 人気記事ランキング (SP版のみ) */}}
