@@ -8,7 +8,7 @@ categories: ["Go", "FFmpeg", "動画処理"]
 tags: ["Go", "FFmpeg", "動画連結", "トラブルシューティング", "パフォーマンスチューニング"]
 showSummary: true
 showHero: true
-# heroImage: "featured.png"
+# heroImage: "featured.webp"
 ---
 
 {{< lead >}}

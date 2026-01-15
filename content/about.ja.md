@@ -11,7 +11,7 @@ sitemap:
 
 <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
   <div class="flex-shrink-0">
-    <img src="/author.png" alt="ゆーふー" style="width: 120px; height: 120px; border-radius: 50% !important; border: 4px solid #dbeafe !important; object-fit: cover !important;" class="shadow-lg">
+    <img src="/author.webp" alt="ゆーふー" style="width: 120px; height: 120px; border-radius: 50% !important; border: 4px solid #dbeafe !important; object-fit: cover !important;" class="shadow-lg">
   </div>
   <div>
     <p class="text-xl font-bold mb-2">「エンジニア技術ブログ」へお越しいただき、誠にありがとうございます。</p>
