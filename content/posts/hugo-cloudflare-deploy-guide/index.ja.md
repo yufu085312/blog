@@ -42,7 +42,7 @@ Hugoにはいくつかの記事管理方法がありますが、**Page Bundles**
 hugo new content posts/my-first-guide/index.ja.md
 ```
 
-作成されたディレクトリ内に、アイキャッチ画像（`featured.png` など）も一緒に保存しましょう。
+作成されたディレクトリ内に、アイキャッチ画像（`featured.webp` など）も一緒に保存しましょう。
 
 ---
 
@@ -61,7 +61,7 @@ hugo new content posts/my-first-guide/index.ja.md
 {{< /alert >}}
 
 ### 画像の最適化（Featured Image）
-フロントマターで `showHero: true` を設定し、`featured.png` という名前の画像をディレクトリ内に置くだけで、自動的に美しいヒーロー画像（アイキャッチ）が表示されます。
+フロントマターで `showHero: true` を設定し、`featured.webp` という名前の画像をディレクトリ内に置くだけで、自動的に美しいヒーロー画像（アイキャッチ）が表示されます。
 
 ---
 

@@ -8,7 +8,7 @@ categories: ["キャリア", "プログラミング学習"]
 tags: ["学生エンジニア", "独学", "実務経験", "就活", "メガベンチャー"]
 showSummary: true
 showHero: true
-# heroImage: "featured.png" # Page Bundle形式の場合は画像ファイルを置くだけでOK
+# heroImage: "featured.webp" # Page Bundle形式の場合は画像ファイルを置くだけでOK
 ---
 
 {{< lead >}}

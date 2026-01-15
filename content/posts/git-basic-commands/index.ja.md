@@ -72,12 +72,12 @@ GitHub開発の基本単位は「リポジトリ」です。
 
 **新規リポジトリ作成手順：**
 
-![GitHub New Repository Menu](github-new-menu.png "右上のプラスボタンからNew repositoryを選択")
+![GitHub New Repository Menu](github-new-menu.webp "右上のプラスボタンからNew repositoryを選択")
 
 1. GitHubにログイン
 2. 右上の「+」→「New repository」
 
-![GitHub Create New Repository Form](github-new-repo-form.png "リポジトリ作成画面の入力項目")
+![GitHub Create New Repository Form](github-new-repo-form.webp "リポジトリ作成画面の入力項目")
 
 3. Repository name を入力
 4. Public / Private を選択

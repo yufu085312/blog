@@ -8,7 +8,7 @@ categories: ["Web開発", "セキュリティ"]
 tags: ["Webセキュリティ", "エンジニア", "用語集", "OWASP"]
 showSummary: true
 showHero: true
-# heroImage: "featured.png"
+# heroImage: "featured.webp"
 ---
 
 {{< lead >}}

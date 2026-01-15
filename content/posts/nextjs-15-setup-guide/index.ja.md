@@ -8,7 +8,7 @@ categories: ["Web開発", "Next.js"]
 tags: ["Next.js", "React", "App Router", "TypeScript", "Tailwind CSS", "SEO"]
 showSummary: true
 showHero: true
-# heroImage: "featured.png"
+# heroImage: "featured.webp"
 ---
 
 {{< lead >}}
@@ -185,7 +185,7 @@ export const metadata = {
     title: "記事タイトル",
     description: "ここに要約文",
     type: "article",
-    images: "/og.png",
+    images: "/og.webp",
   }
 }
 ```

@@ -43,7 +43,7 @@ hugo new content posts/[記事タイトル]/index.ja.md
 ```
 
 ### 執筆のルール
-1.  **画像の配置**: 作成されたフォルダ内に直接画像（`featured.png` など）を置きます。
+1.  **画像の配置**: 作成されたフォルダ内に直接画像（`featured.webp` など）を置きます。
 2.  **フロントマターの設定**:
     - `draft: true` : 書きかけの時は true、公開する時は false にします。
     - `showHero: true` : 記事のトップに画像を表示します。
