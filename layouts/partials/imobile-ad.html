@@ -9,7 +9,7 @@
     const adContainer = document.getElementById("imobile-ad");
     if (!adContainer || adContainer.children.length > 0) return;
 
-    const isPC = window.matchMedia("(min-width: 853px)").matches;
+    const isPC = window.matchMedia("(min-width: 768px)").matches;
 
     (window.adsbyimobile = window.adsbyimobile || []).push(
       isPC
