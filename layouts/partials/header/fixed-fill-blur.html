@@ -11,6 +11,23 @@
     .header-force-dark p {
       color: #171717 !important;
     }
+    /* Light Mode (Default) */
+    #menu-wrapper a,
+    #menu-wrapper button,
+    #menu-wrapper span,
+    #menu-wrapper p,
+    #menu-close-button span {
+      color: #171717 !important;
+    }
+    
+    /* Dark Mode */
+    html.dark #menu-wrapper a,
+    html.dark #menu-wrapper button,
+    html.dark #menu-wrapper span,
+    html.dark #menu-wrapper p,
+    html.dark #menu-close-button span {
+      color: #ffffff !important;
+    }
   </style>
   <div class="header-force-dark relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
     {{ partial "header/basic.html" . }}
