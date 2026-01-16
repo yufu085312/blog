@@ -1,0 +1,25 @@
+<div style="height: 180px;"></div>
+<div class="fixed inset-x-0 z-100">
+  <div
+    class="absolute inset-x-0 top-0 h-full single_hero_background nozoom"
+    style="opacity: 1 !important; background-color: #e0f2fe !important;"></div>
+  <style>
+    .header-force-dark,
+    .header-force-dark a,
+    .header-force-dark button,
+    .header-force-dark span,
+    .header-force-dark p {
+      color: #171717 !important;
+    }
+  </style>
+  <div class="header-force-dark relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
+    {{ partial "header/basic.html" . }}
+  </div>
+</div>
+{{ $backgroundBlur := resources.Get "js/background-blur.js" }}
+{{ $backgroundBlur = $backgroundBlur | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+<script
+  type="text/javascript"
+  src="{{ $backgroundBlur.RelPermalink }}"
+  integrity="{{ $backgroundBlur.Data.Integrity }}"
+  data-blur-id="menu-blur"></script>
