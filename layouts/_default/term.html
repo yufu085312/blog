@@ -1,13 +1,11 @@
 {{ define "main" }}
-  {{ .Scratch.Set "scope" "list" }}
+  {{ .Scratch.Set "scope" "term" }}
   
-  {{/* 共通背景パーツの挿入 */}}
-
   <div class="relative w-full py-16">
   
-    {{/* Header (Moved outside of the flex container) */}}
+    {{/* Header */}}
     <header class="text-center mb-12">
-        {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs | default false) }}
+        {{ if .Params.showBreadcrumbs | default (site.Params.term.showBreadcrumbs | default false) }}
         {{ partial "breadcrumbs.html" . }}
         {{ end }}
         <style>
@@ -27,7 +25,7 @@
           {{ .Title }}
         </h1>
         <div class="mt-1 mb-8 text-base text-neutral-600 dark:text-neutral-400">
-          {{ partial "article-meta/list.html" (dict "context" . "scope" "single") }}
+          {{ partial "article-meta/term.html" (dict "context" . "scope" "single") }}
         </div>
     </header>
 
@@ -36,17 +34,19 @@
       <div class="flex-grow min-w-0">
 
         {{/* Description (markdown content) */}}
-        <section class="prose dark:prose-invert max-w-none mb-0 text-center">
+        {{ if .Content }}
+        <section class="prose dark:prose-invert max-w-none mb-10 text-center">
           <div class="inline-block text-center w-full max-w-prose">
             {{ .Content }}
           </div>
         </section>
+        {{ end }}
 
         {{/* Article Grid */}}
         <div class="recent-articles-section text-left">
           {{ if gt .Pages 0 }}
-          {{ $cardView := .Params.cardView | default (site.Params.list.cardView | default false) }}
-          {{ $groupByYear := .Params.groupByYear | default (site.Params.list.groupByYear | default false) }}
+          {{ $cardView := .Params.cardView | default (site.Params.term.cardView | default false) }}
+          {{ $groupByYear := .Params.groupByYear | default (site.Params.term.groupByYear | default false) }}
         
           {{ if $cardView }}
           <section class="w-full grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -64,11 +64,11 @@
           {{ else }}
             <section class="mt-10 prose dark:prose-invert text-center">
               <p class="py-8 border-t border-neutral-200 dark:border-neutral-700">
-                <em>{{ i18n "list.no_articles" | emojify }}</em>
+                <em>{{ i18n "term.no_articles" | emojify }}</em>
               </p>
             </section>
-            {{ end }}
-            </div>
+          {{ end }}
+          </div>
 
         {{ partial "pagination.html" . }}
         </div>

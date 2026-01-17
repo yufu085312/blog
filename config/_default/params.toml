@@ -42,6 +42,7 @@ mainSections = ["posts"]
   showAuthor = true
   showAuthorBottom = true
   showHero = false
+  heroStyle = "basic"
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = false
@@ -67,6 +68,16 @@ mainSections = ["posts"]
   showCards = true
   groupByYear = true
   cardView = true
+
+[term]
+  showBreadcrumbs = true
+  showSummary = true
+  cardView = true
+  groupByYear = true
+
+[taxonomy]
+  cardView = true
+  showBreadcrumbs = true
 
 [verification]
   google = "b5c719ee8bf2c798"
