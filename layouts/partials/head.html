@@ -54,6 +54,8 @@
   {{ end }}
 
   {{/* Social */}}
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
   <meta property="og:title" content="{{ .Title | plainify }}" />
   <meta property="og:description"
     content="{{ (.Params.Summary | default .Params.Description) | default .Site.Params.description }}" />
