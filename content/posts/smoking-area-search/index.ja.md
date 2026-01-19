@@ -1,7 +1,7 @@
 ---
 title: "🧠 喫煙所サーチアプリを作ってみた<br> Next.js × Firebase × Leafletで実現する位置情報共有サービス"
 date: 2025-12-28T17:34:00+09:00
-description: "Next.js / Firebase / Leaflet.js を使って、誰でも最新の喫煙所情報を共有・確認できるWebアプリを個人開発しました。"
+description: "Next.js、Firebase、Leaflet.jsを活用して、最新の喫煙所情報を共有・確認できるWebアプリ「喫煙所サーチ」を個人開発しました。位置情報サービスの構築手順や、パフォーマンス最適化、UX改善の工夫について詳しく紹介します。"
 summary: "Next.js / Firebase / Leaflet.js を使って、誰でも最新の喫煙所情報を共有・確認できるWebアプリを個人開発しました。"
 categories: ["個人開発"]
 tags: ["Next.js", "Firebase", "Leaflet", "位置情報", "位置情報サービス"]

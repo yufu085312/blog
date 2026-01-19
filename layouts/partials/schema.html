@@ -11,12 +11,29 @@
     {{ with .Site.Params.keywords }}"keywords": {{ . }},{{ end }}
     "publisher" : {
       "@type": "Person",
-      "name": "{{ .Site.Params.Author.name | safeJS }}"
+      "name": "{{ .Site.Params.Author.name | safeJS }}"{{ with .Site.Params.Author.image }},
+      "image": "{{ . | absURL }}"{{ end }}{{ with .Site.Params.Author.links }}{{ range $links := . }}{{ range $name, $url := $links }},
+      "sameAs": "{{ $url }}"{{ end }}{{ end }}{{ end }}
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ site.Home.Permalink }}search/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
     }
   }
   </script>
 {{ else }}
   {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+  {{- $featureImage := "" -}}
+  {{- $pageImages := .Resources.ByType "image" -}}
+  {{- range slice "*featured*" "*cover*" "*thumbnail*" -}}
+    {{- if not $featureImage -}}
+      {{- $featureImage = $pageImages.GetMatch . -}}
+    {{- end -}}
+  {{- end -}}
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
@@ -29,7 +46,17 @@
     "url" : {{ .Permalink }},
     "author" : {
       "@type": "Person",
-      "name": "{{ .Site.Params.Author.name | safeJS }}"
+      "name": "{{ .Site.Params.Author.name | safeJS }}"{{ with .Site.Params.Author.image }},
+      "image": "{{ . | absURL }}"{{ end }}{{ with .Site.Params.Author.links }}{{ range $links := . }}{{ range $name, $url := $links }},
+      "url": "{{ $url }}"{{ end }}{{ end }}{{ end }}
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ .Site.Title | safeJS }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ "logo.webp" | absURL }}"
+      }
     },
     {{ with .PublishDate }}"copyrightYear": "{{ .Format "2006" }}",{{ end }}
     {{ with .Date }}"dateCreated": "{{ .Format $iso8601 }}",{{ end }}
@@ -41,6 +68,7 @@
     {{ else }}
     {{ with .Params.tags }}"keywords": {{ . }},{{ end }}
     {{ end }}
+    {{ with $featureImage }}"image": "{{ .RelPermalink | absURL }}",{{ end }}
     "mainEntityOfPage": "true",
     "wordCount": "{{ .WordCount }}"
   }{{ if site.Params.enableStructuredBreadcrumbs | default false }},
