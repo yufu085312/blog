@@ -1,7 +1,7 @@
 ---
 title: "🚀 AI統合型エディタ Cursor 徹底解説<br>GitHub Copilotとの違いと使いこなし術"
 date: 2025-12-29T19:44:00+09:00
-description: "GitHub Copilotを超える開発体験。次世代AIエディタCursorの基本機能からVS Codeからの移行、実務で役立つプロンプトのコツまでを網羅。"
+description: "GitHub Copilotを超える開発体験を提供する、次世代AIエディタCursorの基本機能からVS Codeからの移行方法、実務で役立つプロンプトのコツまでを網羅して解説します。AIと共に創る新しい開発スタイルを体験しましょう。"
 summary: "「コードを書く」から「AIと共に創る」時代へ。VS Codeベースでありながら、プロジェクト全体を理解するAIと対話できる Cursor の魅力を詳しく解説します。"
 categories: ["開発ツール", "AI"]
 tags: ["Cursor", "AI", "GitHub Copilot", "VS Code", "生産性向上"]
