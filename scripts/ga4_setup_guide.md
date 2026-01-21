@@ -56,8 +56,14 @@ python3 -m venv venv
 export GOOGLE_APPLICATION_CREDENTIALS="ga4-creds.json"
 
 # GA4 プロパティIDの指定
-export GA4_PROPERTY_ID="あなたのプロパティID"
+# 注: G- で始まる「測定ID」ではなく、9桁程度の「数値ID」を指定してください
+export GA4_PROPERTY_ID="123456789" # 例
 ```
+
+### プロパティIDの確認方法
+1. [Google Analytics](https://analytics.google.com/) の左下にある「管理」（歯車アイコン）をクリックします。
+2. 「プロパティの詳細」を選択します。
+3. 右上に表示されている **プロパティ ID（数字のみ）** をコピーしてください。
 
 ### 3. スクリプトの実行
 仮想環境内のPythonを使用して実行します。
