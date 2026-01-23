@@ -4,7 +4,7 @@
   "description": "Web開発、サーバー技術、全技術領域を扱うエンジニアブログ",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#121212",
   "theme_color": "#3b82f6",
   "icons": [
     {
