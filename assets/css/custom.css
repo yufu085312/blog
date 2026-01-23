@@ -724,3 +724,77 @@ html.dark .category-tag-link:hover .category-count {
     padding: 0.1875rem 0.5rem;
   }
 }
+
+/* ========================================
+   ヘッダーの視認性と強調（太字化）
+   ======================================== */
+
+/* ブログタイトルとメニュー項目（PC版ナビゲーション含む）を太字に */
+.main-menu a.text-base,
+.main-menu .nav-link,
+.main-menu a[href],
+header nav a p,
+.main-menu nav p {
+  font-weight: 700 !important;
+  /* 太字 */
+}
+
+/* ========================================
+   記事カードのホバーエフェクト刷新（おしゃれ化）
+   ======================================== */
+
+/* カード本体の基本スタイルとアニメーション */
+article.rounded-lg.border {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease !important;
+  position: relative;
+  background-color: #ffffff !important;
+}
+
+html.dark article.rounded-lg.border {
+  background-color: #1f1f1f !important;
+  border-color: #333333 !important;
+}
+
+/* ホバー時の挙動：カードが少し浮き上がり、シャドウを強くする */
+article.rounded-lg.border:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+  border-color: #3b82f6 !important;
+  /* 枠線をメインカラーに */
+}
+
+html.dark article.rounded-lg.border:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 画像のズームエフェクト */
+.thumbnail_card {
+  overflow: hidden;
+  /* はみ出し防止 */
+}
+
+.thumbnail_card img {
+  transition: transform 0.5s ease !important;
+}
+
+article.rounded-lg.border:hover .thumbnail_card img {
+  transform: scale(1.08) !important;
+}
+
+/* タイトルのアンダーラインを廃止し、色変化にする */
+article.rounded-lg.border a.not-prose {
+  text-decoration: none !important;
+  /* 下線を消す */
+  transition: color 0.3s ease !important;
+}
+
+article.rounded-lg.border:hover a.not-prose {
+  text-decoration: none !important;
+  color: #3b82f6 !important;
+  /* ホバー時にメインカラーへ */
+}
+
+/* タグや日付のメタ情報も少し明るく */
+article.rounded-lg.border:hover .text-neutral-500 {
+  color: #737373 !important;
+}
