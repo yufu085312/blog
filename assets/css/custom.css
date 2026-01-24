@@ -740,6 +740,33 @@ header nav a p,
 }
 
 /* ========================================
+   ffmpeg記事用：動画構造図（moov-structure）
+   ======================================== */
+figure.moov-structure {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+figure.moov-structure img {
+  max-width: 80% !important;
+  /* 他の記事に合わせてサイズを縮小 */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+figure.moov-structure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+html.dark figure.moov-structure figcaption {
+  color: #a3a3a3;
+  /* ダークモードでのキャプション色調整 */
+}
+/* ========================================
    記事カードのホバーエフェクト刷新（おしゃれ化）
    ======================================== */
 
