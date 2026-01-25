@@ -1,0 +1,25 @@
+{{/* プロフィールサイドバー */}}
+{{ if ne .Layout "page" }}
+  <div class="author-profile-sidebar mt-8">
+    <h3 class="text-lg font-bold mb-4 text-neutral-900 dark:text-neutral-100">
+      👤 運営者プロフィール
+    </h3>
+    
+    <div class="profile-content bg-neutral-100 dark:bg-neutral-800 rounded-lg p-4 shadow-sm">
+      {{/* プロフィール画像 */}}
+      <div class="profile-image mb-4 flex justify-center">
+        <img 
+          src="/author.webp" 
+          alt="運営者プロフィール画像" 
+          class="rounded-full w-24 h-24 object-cover border-2 border-primary-500"
+          loading="lazy"
+        >
+      </div>
+      
+      {{/* プロフィール説明文 */}}
+      <div class="profile-text text-sm text-neutral-700 dark:text-neutral-300 text-center leading-relaxed">
+        <p>「エンジニア技術ブログ」へお越しいただき、誠にありがとうございます。運営者の <strong>ゆーふー</strong> と申します。</p>
+      </div>
+    </div>
+  </div>
+{{ end }}
