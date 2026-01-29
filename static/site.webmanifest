@@ -1,6 +1,6 @@
 {
   "name": "エンジニア技術ブログ",
-  "short_name": "ゆーふーブログ",
+  "short_name": "エンジニア技術ブログ",
   "description": "Web開発、サーバー技術、全技術領域を扱うエンジニアブログ",
   "start_url": "/",
   "display": "standalone",
