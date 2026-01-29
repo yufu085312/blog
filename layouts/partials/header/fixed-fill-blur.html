@@ -4,13 +4,25 @@
     class="absolute inset-x-0 top-0 h-full single_hero_background nozoom"
     style="opacity: 1 !important; background-color: #aad3f4 !important;"></div>
   <style>
-    .header-force-dark,
+    .header-force-dark {
+      color: #171717 !important;
+    }
     .header-force-dark a,
     .header-force-dark button,
     .header-force-dark span,
     .header-force-dark p {
       color: #171717 !important;
+      transition: color 0.2s ease-in-out;
     }
+    
+    .header-force-dark a:hover,
+    .header-force-dark a:hover p,
+    .header-force-dark a:hover span,
+    .header-force-dark button:hover,
+    .header-force-dark button:hover span {
+      color: #3b82f6 !important;
+    }
+
     /* Light Mode (Default) */
     #menu-wrapper a,
     #menu-wrapper button,
