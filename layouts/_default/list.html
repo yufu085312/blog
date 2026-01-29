@@ -31,56 +31,58 @@
         </div>
     </header>
 
-    <div class="flex flex-col lg:flex-row lg:items-start">
-      {{/* Main Content Area */}}
-      <div class="flex-grow min-w-0">
+    <div class="recent-articles-section">
+      <div class="flex flex-col lg:flex-row lg:items-start">
+        {{/* Main Content Area */}}
+        <div class="flex-grow min-w-0">
 
-        {{/* Description (markdown content) */}}
-        <section class="prose dark:prose-invert max-w-none mb-0 text-center">
-          <div class="inline-block text-center w-full max-w-prose">
-            {{ .Content }}
-          </div>
-        </section>
+          {{/* Description (markdown content) */}}
+          <section class="prose dark:prose-invert max-w-none mb-0 text-center">
+            <div class="inline-block text-center w-full max-w-prose">
+              {{ .Content }}
+            </div>
+          </section>
 
-        {{/* Article Grid */}}
-        <div class="recent-articles-section text-left">
-          {{ if gt .Pages 0 }}
-          {{ $cardView := .Params.cardView | default (site.Params.list.cardView | default false) }}
-          {{ $groupByYear := .Params.groupByYear | default (site.Params.list.groupByYear | default false) }}
-        
-          {{ if $cardView }}
-          <section class="w-full grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {{ range .Paginator.Pages }}
-            {{ partial "article-link/card.html" . }}
-            {{ end }}
-          </section>
-          {{ else }}
-          <section class="space-y-10 w-full">
-            {{ range .Paginator.Pages }}
-            {{ partial "article-link/simple.html" . }}
-            {{ end }}
-          </section>
-          {{ end }}
-          {{ else }}
-            <section class="mt-10 prose dark:prose-invert text-center">
-              <p class="py-8 border-t border-neutral-200 dark:border-neutral-700">
-                <em>{{ i18n "list.no_articles" | emojify }}</em>
-              </p>
+          {{/* Article Grid */}}
+          <div class="text-left">
+            {{ if gt .Pages 0 }}
+            {{ $cardView := .Params.cardView | default (site.Params.list.cardView | default false) }}
+            {{ $groupByYear := .Params.groupByYear | default (site.Params.list.groupByYear | default false) }}
+          
+            {{ if $cardView }}
+            <section class="w-full grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {{ range .Paginator.Pages }}
+              {{ partial "article-link/card.html" . }}
+              {{ end }}
+            </section>
+            {{ else }}
+            <section class="space-y-10 w-full">
+              {{ range .Paginator.Pages }}
+              {{ partial "article-link/simple.html" . }}
+              {{ end }}
             </section>
             {{ end }}
-            </div>
+            {{ else }}
+              <section class="mt-10 prose dark:prose-invert text-center">
+                <p class="py-8 border-t border-neutral-200 dark:border-neutral-700">
+                  <em>{{ i18n "list.no_articles" | emojify }}</em>
+                </p>
+              </section>
+              {{ end }}
+              </div>
 
-        {{ partial "pagination.html" . }}
-        </div>
-        
-        {{/* Sidebar Area (Desktop: Right, Mobile: Bottom) */}}
-        <aside class="w-full lg:w-1/6 lg:ps-8 mt-12 lg:mt-0 flex-shrink-0">
-          <div class="lg:sticky lg:top-10">
-            {{ partial "popular-articles-sidebar.html" . }}
-            {{ partial "categories-sidebar.html" . }}
-            {{ partial "imobile-ad.html" . }}
+          {{ partial "pagination.html" . }}
           </div>
-        </aside>
+          
+          {{/* Sidebar Area (Desktop: Right, Mobile: Bottom) */}}
+          <aside class="w-full lg:w-1/6 lg:ps-8 mt-12 lg:mt-0 flex-shrink-0">
+            <div class="lg:sticky lg:top-10">
+              {{ partial "popular-articles-sidebar.html" . }}
+              {{ partial "categories-sidebar.html" . }}
+              {{ partial "imobile-ad.html" . }}
+            </div>
+          </aside>
+      </div>
     </div>
   </div>
 {{ end }}

@@ -26,45 +26,47 @@
         </h1>
     </header>
 
-    <div class="flex flex-col lg:flex-row lg:items-start">
-      {{/* Main Content Area */}}
-      <div class="flex-grow min-w-0">
+    <div class="recent-articles-section">
+      <div class="flex flex-col lg:flex-row lg:items-start">
+        {{/* Main Content Area */}}
+        <div class="flex-grow min-w-0">
 
-        {{/* Description (markdown content) */}}
-        {{ if .Content }}
-        <section class="prose dark:prose-invert max-w-none mb-10 text-center">
-          <div class="inline-block text-center w-full max-w-prose">
-            {{ .Content }}
-          </div>
-        </section>
-        {{ end }}
-
-        {{/* Terms Grid */}}
-        <div class="recent-articles-section text-left">
-          {{ if site.Params.taxonomy.cardView }}
-            <section class="w-full grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {{ range .Data.Terms }}
-                {{ partial "term-link/card.html" . }}
-              {{ end }}
-            </section>
-          {{ else }}
-            <section class="flex flex-wrap -mx-2 overflow-hidden">
-              {{ range .Data.Terms }}
-                {{ partial "term-link/text.html" . }}
-              {{ end }}
-            </section>
+          {{/* Description (markdown content) */}}
+          {{ if .Content }}
+          <section class="prose dark:prose-invert max-w-none mb-10 text-center">
+            <div class="inline-block text-center w-full max-w-prose">
+              {{ .Content }}
+            </div>
+          </section>
           {{ end }}
+
+          {{/* Terms Grid */}}
+          <div class="text-left">
+            {{ if site.Params.taxonomy.cardView }}
+              <section class="w-full grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {{ range .Data.Terms }}
+                  {{ partial "term-link/card.html" . }}
+                {{ end }}
+              </section>
+            {{ else }}
+              <section class="flex flex-wrap -mx-2 overflow-hidden">
+                {{ range .Data.Terms }}
+                  {{ partial "term-link/text.html" . }}
+                {{ end }}
+              </section>
+            {{ end }}
+          </div>
         </div>
+          
+        {{/* Sidebar Area (Desktop: Right, Mobile: Bottom) */}}
+        <aside class="w-full lg:w-1/6 lg:ps-8 mt-12 lg:mt-0 flex-shrink-0">
+          <div class="lg:sticky lg:top-10">
+            {{ partial "popular-articles-sidebar.html" . }}
+            {{ partial "categories-sidebar.html" . }}
+            {{ partial "imobile-ad.html" . }}
+          </div>
+        </aside>
       </div>
-        
-      {{/* Sidebar Area (Desktop: Right, Mobile: Bottom) */}}
-      <aside class="w-full lg:w-1/6 lg:ps-8 mt-12 lg:mt-0 flex-shrink-0">
-        <div class="lg:sticky lg:top-10">
-          {{ partial "popular-articles-sidebar.html" . }}
-          {{ partial "categories-sidebar.html" . }}
-          {{ partial "imobile-ad.html" . }}
-        </div>
-      </aside>
     </div>
   </div>
 {{ end }}
