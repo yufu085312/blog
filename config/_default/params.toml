@@ -32,7 +32,7 @@ mainSections = ["posts"]
   layout = "background"
   homepageImage = "hero.webp"
   showRecent = true
-  showRecentItems = 6
+  showRecentItems = 12
   showMoreLink = true
   cardView = true
 
