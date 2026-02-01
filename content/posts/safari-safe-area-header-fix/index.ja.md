@@ -4,7 +4,7 @@ date: 2026-01-23T22:42:54+09:00
 draft: false
 description: "iOS Safariでヘッダーがノッチに被る原因と、env(safe-area-inset)を使った正しいセーフエリア対応の実装方法と注意点を実例付きで解説します。"
 summary: "Safariでヘッダーがノッチに被る原因を解説し、env(safe-area-inset)とviewport-fit=coverを使った正しいセーフエリア対応の実装方法と注意点を実務視点でまとめます。"
-categories: ["Webフロントエンド", "iOS Safari"]
+categories: ["フロントエンド", "iOS Safari"]
 tags: ["Safari"," iOS", "セーフエリア", "safe-area-inset", "ノッチ", "CSS", "レスンシブ対応", "モバイルWeb"]
 showSummary: true
 showHero: true

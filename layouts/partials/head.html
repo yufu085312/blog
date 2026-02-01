@@ -32,6 +32,10 @@
     <meta name="robots" content="{{ . }}">
   {{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+  {{ range .Translations }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+  {{ end }}
   {{ range .AlternativeOutputFormats }}
     {{ printf `
       <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) |
@@ -62,6 +66,7 @@
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
   <meta property="og:url" content="{{ .Permalink }}" />
   <meta property="og:site_name" content="{{ .Site.Title | plainify }}" />
+  <meta property="og:locale" content="{{ .Language.Lang }}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ .Title | plainify }}" />
   <meta name="twitter:description"
@@ -74,7 +79,12 @@
       {{ $featureImage = $pageImages.GetMatch . }}
     {{ end }}
   {{ end }}
-  {{ if not $featureImage }}
+  {{ if $featureImage }}
+    <meta name="twitter:image" content="{{ $featureImage.RelPermalink | absURL }}">
+    <meta name="twitter:image:alt" content="{{ .Title | plainify }}">
+    <meta property="og:image" content="{{ $featureImage.RelPermalink | absURL }}">
+    <meta property="og:image:alt" content="{{ .Title | plainify }}">
+  {{ else }}
     {{ with .Site.Params.defaultSocialImage }}
       {{ $socialImage := "" }}
       {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
@@ -86,12 +96,16 @@
         <meta name="twitter:image" content="{{ .RelPermalink | absURL }}">
         <meta name="twitter:image:alt" content="{{ $.Site.Title | emojify | plainify }}">
         <meta property="og:image" content="{{ .RelPermalink | absURL }}">
+        <meta property="og:image:secure_url" content="{{ .RelPermalink | absURL }}">
+        <meta property="og:image:type" content="image/webp">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
         <meta property="og:image:alt" content="{{ $.Site.Title | emojify | plainify }}">
       {{ end }}
     {{ end }}
   {{ end }}
 
-  {{/* Fallback favicon as og:image for search results if no feature image */}}
+  {{/* Fallback favicon as og:image for search results if no feature image and no defaultSocialImage */}}
   {{ if and (not $featureImage) (not .Site.Params.defaultSocialImage) }}
     <meta property="og:image" content="{{ "apple-touch-icon.webp" | absURL }}">
     <meta property="og:image:secure_url" content="{{ "apple-touch-icon.webp" | absURL }}">
