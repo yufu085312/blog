@@ -49,7 +49,9 @@
     "author" : {
       "@type": "Person",
       "name": "{{ .Site.Params.Author.name | safeJS }}"{{ with .Site.Params.Author.image }},
-      "image": "{{ . | absURL }}"{{ end }}{{ with .Site.Params.Author.links }}{{ range $links := . }}{{ range $name, $url := $links }},
+      "image": "{{ . | absURL }}"{{ end }}{{ with .Site.Params.Author.headline }},
+      "jobTitle": "{{ . | safeJS }}"{{ end }}{{ with .Site.Params.Author.bio }},
+      "description": "{{ . | safeJS }}"{{ end }}{{ with .Site.Params.Author.links }}{{ range $links := . }}{{ range $name, $url := $links }},
       "url": "{{ $url }}"{{ end }}{{ end }}{{ end }}
     },
     "publisher": {
