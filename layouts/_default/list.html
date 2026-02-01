@@ -77,6 +77,7 @@
           {{/* Sidebar Area (Desktop: Right, Mobile: Bottom) */}}
           <aside class="w-full lg:w-1/6 lg:ps-8 mt-12 lg:mt-0 flex-shrink-0">
             <div class="lg:sticky lg:top-10">
+              {{ partial "author-profile-sidebar.html" . }}
               {{ partial "popular-articles-sidebar.html" . }}
               {{ partial "categories-sidebar.html" . }}
               {{ partial "imobile-ad.html" . }}
