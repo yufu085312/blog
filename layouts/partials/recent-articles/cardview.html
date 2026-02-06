@@ -1,9 +1,23 @@
 {{ $recentArticles := 5 }}
 {{ $recentArticles = .Site.Params.homepage.showRecentItems }}
 
+<style>
+  .recent-articles-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .recent-articles-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
 
-<section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-  {{ range $index, $element := first $recentArticles ((where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) }}
-    {{ partial "article-link/card.html" (dict "page" . "index" $index) }}
+<section class="w-full recent-articles-grid">
+  {{ range first $recentArticles (.Paginate (where .Site.RegularPages "Type" "in"
+    .Site.Params.mainSections)).Pages
+  }}
+    {{ partial "article-link/card.html" . }}
   {{ end }}
 </section>

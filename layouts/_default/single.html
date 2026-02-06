@@ -38,7 +38,7 @@
       {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
       {{ $topClass := cond (hasPrefix site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
       {{/* サイドバー - プロフィールと人気記事を表示 */}}
-      <aside class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-xl">
+      <aside class="w-full lg:w-1/6 flex-shrink-0 order-first lg:order-last mt-12 lg:mt-0 lg:ps-8">
         <div class="toc ps-5 print:hidden lg:sticky {{ $topClass }}">
           {{/* プロフィールサイドバー (PC版のみ) */}}
           <div class="hidden lg:block">
@@ -55,9 +55,7 @@
         </div>
       </aside>
 
-
-
-      <div class="min-w-0 min-h-0 max-w-fit">
+      <div class="flex-grow min-w-0">
         {{ partial "series/series.html" . }}
         {{/* 目次を本文内に表示 */}}
         {{ if $showToc }}
