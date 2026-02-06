@@ -157,8 +157,8 @@ html.dark .prose h3 {
   border-bottom-color: #404040 !important;
 }
 
-/* 記事内画像のサイズ調整と装飾 */
-.prose img {
+/* 記事本文内画像のサイズ調整と装飾 */
+.article-content img {
   max-width: 80% !important;
   height: auto !important;
   margin: 2rem auto !important;
@@ -168,20 +168,20 @@ html.dark .prose h3 {
   transition: transform 0.3s ease !important;
 }
 
-.prose img:hover {
+.article-content img:hover {
   transform: scale(1.02);
 }
 
 /* モバイル表示では幅を100%に近づけて見やすく */
 @media (max-width: 640px) {
-  .prose img {
+  .article-content img {
     max-width: 95% !important;
     margin: 1.5rem auto !important;
   }
 }
 
 /* ギャラリー内の画像は個別に調整されるため制限を解除 */
-.prose .gallery img {
+.article-content .gallery img {
   max-width: 100% !important;
   margin: 0 !important;
   box-shadow: none !important;
@@ -271,6 +271,7 @@ html.dark .popular-articles-sidebar h3 {
 /* 記事アイテム */
 .popular-article-item {
   display: flex;
+  align-items: center;
   gap: 0.875rem;
   padding: 1rem;
   background-color: #f9fafb;
@@ -318,6 +319,7 @@ html.dark .popular-thumbnail {
   max-width: 100% !important;
   margin: 0 !important;
   object-fit: cover;
+  object-position: center !important;
   border-radius: 0.375rem;
   display: block;
   box-shadow: none !important;
@@ -765,12 +767,21 @@ html.dark article.rounded-lg.border:hover {
 .thumbnail_card {
   overflow: hidden;
   /* はみ出し防止 */
+  display: flex !important;
+    align-self: stretch !important;
+    /* 親要素（article）の高さに合わせる */
+    height: auto !important;
+    /* コンテナの高さを内容物に依存させずstretchに任せる */
 }
 
 .thumbnail_card img {
   transition: transform 0.5s ease !important;
   object-fit: cover !important;
-    object-position: center center !important;
+  object-position: center center !important;
+  height: 100% !important;
+    /* コンテナの高さいっぱいに広げる */
+    width: 100% !important;
+    min-height: 100% !important;
 }
 
 article.rounded-lg.border:hover .thumbnail_card img {

@@ -71,16 +71,24 @@
 {{ end }}
 
 <article
-  class="relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  class="relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600 flex flex-col lg:flex-row">
+  <style>
+    @media (min-width: 1024px) {
+      .thumbnail_card {
+        width: 320px !important;
+        flex-shrink: 0;
+      }
+    }
+  </style>
   {{ with $featuredURL }}
-    <div class="flex-none relative overflow-hidden thumbnail_card w-full">
+    <div class="flex-none relative overflow-hidden thumbnail_card w-full lg:w-80">
       <img
         src="{{ . }}"
         role="presentation"
         loading="{{ $loading }}"
         decoding="async"
         fetchpriority="{{ $fetchpriority }}"
-        class="not-prose absolute inset-0 w-full h-full object-cover object-center">
+        class="not-prose w-full h-full object-cover object-center">
     </div>
   {{ end }}
   {{ if and $page.Draft .Site.Params.article.showDraftLabel }}
@@ -88,7 +96,7 @@
       {{ partial "badge.html" (i18n "article.draft" | emojify) }}
     </span>
   {{ end }}
-  <div class="p-4">
+  <div class="p-4 flex-1 flex flex-col justify-center">
     <header>
       <a
         {{ with $page.Params.externalUrl }}
@@ -115,5 +123,4 @@
       <div class="prose dark:prose-invert py-1">{{ $page.Summary | plainify }}</div>
     {{ end }}
   </div>
-  <div class="px-6 pt-4 pb-2"></div>
 </article>
