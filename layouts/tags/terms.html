@@ -40,20 +40,20 @@
           </section>
           {{ end }}
 
-          {{/* Terms Grid */}}
-          <div class="text-left">
-            {{ if site.Params.taxonomy.cardView }}
-              <section class="w-full grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {{ range .Data.Terms }}
-                  {{ partial "term-link/card.html" . }}
-                {{ end }}
-              </section>
-            {{ else }}
-              <section class="flex flex-wrap -mx-2 overflow-hidden">
-                {{ range .Data.Terms }}
-                  {{ partial "term-link/text.html" . }}
-                {{ end }}
-              </section>
+          {{/* New Tags Grid */}}
+          <div class="taxonomy-grid-tags">
+            {{ range .Data.Terms }}
+              {{ $name := .Page.Title }}
+              {{ $count := .Count }}
+              {{ $url := .Page.RelPermalink }}
+              
+              <a href="{{ $url }}" class="tag-pill">
+                <span class="tag-icon">
+                  {{ partial "icon.html" "tag" }}
+                </span>
+                <span class="tag-name">{{ $name }}</span>
+                <span class="tag-count">{{ $count }}</span>
+              </a>
             {{ end }}
           </div>
         </div>
