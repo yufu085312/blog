@@ -40,20 +40,33 @@
           </section>
           {{ end }}
 
-          {{/* Terms Grid */}}
-          <div class="text-left">
-            {{ if site.Params.taxonomy.cardView }}
-              <section class="w-full grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {{ range .Data.Terms }}
-                  {{ partial "term-link/card.html" . }}
-                {{ end }}
-              </section>
-            {{ else }}
-              <section class="flex flex-wrap -mx-2 overflow-hidden">
-                {{ range .Data.Terms }}
-                  {{ partial "term-link/text.html" . }}
-                {{ end }}
-              </section>
+          {{/* New Categories Grid (Pill design to match tags) */}}
+          <div class="taxonomy-grid-tags">
+            {{ range .Data.Terms }}
+              {{ $name := .Page.Title }}
+              {{ $count := .Count }}
+              {{ $url := .Page.RelPermalink }}
+              
+              {{/* Get Icon based on name */}}
+              {{ $icon := "globe" }}
+              {{ if eq $name "AI" }}{{ $icon = "wand-magic-sparkles" }}
+              {{ else if eq $name "Docker" }}{{ $icon = "docker" }}
+              {{ else if eq $name "Git" }}{{ $icon = "github" }}
+              {{ else if eq $name "JavaScript" }}{{ $icon = "code" }}
+              {{ else if eq $name "セキュリティ" }}{{ $icon = "shield" }}
+              {{ else if eq $name "キャリア" }}{{ $icon = "graduation-cap" }}
+              {{ else if eq $name "プログラミング学習" }}{{ $icon = "lightbulb" }}
+              {{ else if eq $name "Web開発" }}{{ $icon = "globe" }}
+              {{ else if eq $name "インフラ" }}{{ $icon = "cloud" }}
+              {{ end }}
+
+              <a href="{{ $url }}" class="tag-pill">
+                <span class="tag-icon">
+                  {{ partial "icon.html" $icon }}
+                </span>
+                <span class="tag-name">{{ $name }}</span>
+                <span class="tag-count">{{ $count }}</span>
+              </a>
             {{ end }}
           </div>
         </div>
