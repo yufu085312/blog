@@ -1,0 +1,35 @@
+<nav class="breadcrumb-container print:hidden" aria-label="breadcrumb">
+  <ol class="flex items-center gap-1">
+    {{ template "crumb" (dict "p1" . "p2" .) }}
+  </ol>
+</nav>
+
+{{ define "crumb" }}
+  {{ if .p1.Parent }}
+    {{ template "crumb" (dict "p1" .p1.Parent "p2" .p2 ) }}
+  {{ else if not .p1.IsHome }}
+    {{ template "crumb" (dict "p1" .p1.Site.Home "p2" .p2 ) }}
+  {{ end }}
+  
+  <li class="{{ if or (eq .p1 .p2) (.p1.IsHome) }}hidden{{ else }}flex items-center gap-1{{ end }}">
+    {{ $isTaxonomyParent := or (eq .p1.Section "categories") (eq .p1.Section "tags") }}
+    {{ $icon := "" }}
+    {{ if eq .p1.Section "categories" }}{{ $icon = "list" }}
+    {{ else if eq .p1.Section "tags" }}{{ $icon = "tag" }}
+    {{ end }}
+
+    <a class="breadcrumb-pill" href="{{ .p1.RelPermalink }}">
+      {{ if $icon }}
+        <span class="icon">
+          {{ partial "icon.html" $icon }}
+        </span>
+      {{ end }}
+      {{ if .p1.Title }}
+        {{- .p1.Title -}}
+      {{ else }}
+        {{- .p1.Section -}}
+      {{ end }}
+    </a>
+    <span class="breadcrumb-separator"></span>
+  </li>
+{{ end }}
