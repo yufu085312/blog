@@ -1070,6 +1070,10 @@ html.dark .breadcrumb-pill {
   font-size: 0.875rem;
 }
 
-html.dark .breadcrumb-separator {
-  color: #475569;
+/* ========================================
+   運営者プロフィール（ダークモード調整）
+   ======================================== */
+html.dark .profile-content {
+  background-color: #262626 !important;
+  border: 1px solid #404040;
 }

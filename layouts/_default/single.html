@@ -32,12 +32,14 @@
     {{ end }}
 
     {{/* Body */}}
-    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    <section class="flex flex-col max-w-full mt-0 lg:flex-row">
       {{ $enableToc := site.Params.article.showTableOfContents | default false }}
       {{ $enableToc = .Params.showTableOfContents | default $enableToc }}
       {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
       {{ $topClass := cond (hasPrefix site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
       {{/* サイドバー - プロフィールと人気記事を表示 */}}
+      {{/* サイドバー - プロフィールと人気記事を表示 (pageレイアウト以外で表示) */}}
+      {{ if ne .Layout "page" }}
       <aside class="w-full lg:w-1/6 flex-shrink-0 order-first lg:order-last mt-12 lg:mt-0 lg:ps-8">
         <div class="toc ps-5 print:hidden lg:sticky {{ $topClass }}">
           {{/* プロフィールサイドバー (PC版のみ) */}}
@@ -54,6 +56,7 @@
           </div>
         </div>
       </aside>
+      {{ end }}
 
       <div class="flex-grow min-w-0">
         {{ partial "series/series.html" . }}
@@ -63,7 +66,7 @@
             {{ partial "toc.html" . }}
           </div>
         {{ end }}
-        <div class="article-content max-w-full mb-20">
+        <div class="article-content max-w-full mb-20 prose dark:prose-invert">
           {{ .Content }}
           {{ $defaultReplyByEmail := site.Params.replyByEmail }}
           {{ $replyByEmail := default $defaultReplyByEmail .Params.replyByEmail }}
