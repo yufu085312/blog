@@ -34,38 +34,40 @@
           {{ $popularTitle | emojify }}
         </h3>
         
-        <div class="space-y-3">
+        <div class="space-y-3 popular-articles-list">
           {{ range $index, $article := . }}
-            <a href="{{ $article.RelPermalink }}" class="popular-article-card block">
-              <article class="popular-article-item">
+            <a href="{{ $article.RelPermalink }}" class="popular-article-card block group">
+              <article class="relative w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 {{/* アイキャッチ画像 */}}
-                <div class="popular-thumbnail">
+                <div class="relative w-full overflow-hidden" style="aspect-ratio: 16/9;">
                   {{ $thumbnail := "" }}
                   {{ with $article.Resources.GetMatch "featured*" }}
-                    {{ $thumbnail = .Resize "200x200" }}
+                    {{ $thumbnail = .Resize "600x" }}
                   {{ end }}
                   
                   {{ if $thumbnail }}
-                    <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $article.Title }}" loading="lazy">
+                    <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $article.Title }}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                   {{ else }}
-                    <div class="popular-rank-fallback">
-                      <span class="rank-number">{{ add $index 1 }}</span>
+                    <div class="popular-rank-fallback w-full h-full flex items-center justify-center bg-neutral-100 dark:bg-neutral-700">
+                      <span class="text-4xl text-neutral-300 dark:text-neutral-600">No Image</span>
                     </div>
                   {{ end }}
                   
-                  <div class="popular-rank-badge">
+                  {{/* ランキングバッジ (左上) - 画像コンテナ内に配置し、custom.cssの負の座標を上書き */}}
+                  <div class="popular-rank-badge absolute w-8 h-8 flex items-center justify-center rounded-full text-white font-bold text-sm shadow-md pointer-events-none" style="background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); z-index: 20; top: 0.5rem !important; left: 0.5rem !important;">
                     {{ add $index 1 }}
                   </div>
                 </div>
                 
                 {{/* 記事情報 */}}
-                <div class="popular-content">
-                  <h4 class="popular-title">
+                <div class="p-4">
+                  <h4 class="text-base font-bold text-neutral-800 dark:text-neutral-100 line-clamp-2 mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                     {{ $article.Title | emojify | safeHTML }}
                   </h4>
                   
-                  <div class="popular-meta">
-                    <time datetime="{{ $article.Date.Format "2006-01-02" }}">
+                  <div class="text-xs text-neutral-500 dark:text-neutral-400 flex items-center gap-2">
+                    <time datetime="{{ $article.Date.Format "2006-01-02" }}" class="flex items-center gap-1">
+                      <span>📅</span>
                       {{ $article.Date.Format "2006/01/02" }}
                     </time>
                   </div>
