@@ -32,7 +32,7 @@
     {{ end }}
 
     {{/* Body */}}
-    <section class="flex flex-col max-w-full mt-0 lg:flex-row">
+    <section class="article-main-section flex flex-col max-w-full mt-0 lg:flex-row">
       {{ $enableToc := site.Params.article.showTableOfContents | default false }}
       {{ $enableToc = .Params.showTableOfContents | default $enableToc }}
       {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
