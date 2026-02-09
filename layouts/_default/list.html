@@ -4,9 +4,10 @@
   {{/* 共通背景パーツの挿入 */}}
 
   <div class="relative w-full py-16">
+    <div class="mx-auto max-w-7xl px-6">
   
-    {{/* Header (Moved outside of the flex container) */}}
-    <header class="text-center mb-12">
+      {{/* Header (Moved outside of the flex container) */}}
+      <header class="text-center mb-12">
         {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs | default false) }}
         {{ partial "breadcrumbs.html" . }}
         {{ end }}
@@ -32,7 +33,7 @@
     </header>
 
     <div class="recent-articles-section">
-      <div class="flex flex-col lg:flex-row lg:items-start">
+      <div class="flex flex-col xl:flex-row xl:items-start">
         {{/* Main Content Area */}}
         <div class="flex-grow min-w-0">
 
@@ -87,8 +88,8 @@
           </div>
           
           {{/* Sidebar Area (Desktop: Right, Mobile: Bottom) */}}
-          <aside class="w-full lg:w-1/6 lg:ps-8 mt-12 lg:mt-0 flex-shrink-0">
-            <div class="lg:sticky lg:top-10">
+          <aside class="w-full xl:w-1/6 xl:ps-8 mt-12 xl:mt-0 flex-shrink-0">
+            <div class="xl:sticky xl:top-10">
               {{ partial "author-profile-sidebar.html" . }}
               {{ partial "popular-articles-sidebar.html" . }}
               {{ partial "categories-sidebar.html" . }}
@@ -96,6 +97,7 @@
             </div>
           </aside>
       </div>
+    </div>
     </div>
   </div>
 {{ end }}

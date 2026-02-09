@@ -2,9 +2,10 @@
   {{ .Scratch.Set "scope" "list" }}
   
   <div class="relative w-full py-16">
+    <div class="mx-auto max-w-7xl px-6">
   
-    {{/* Header */}}
-    <header class="text-center mb-12">
+      {{/* Header */}}
+      <header class="text-center mb-12">
         {{ if .Params.showBreadcrumbs | default (site.Params.taxonomy.showBreadcrumbs | default false) }}
         {{ partial "breadcrumbs.html" . }}
         {{ end }}
@@ -67,6 +68,7 @@
           </div>
         </aside>
       </div>
+    </div>
     </div>
   </div>
 {{ end }}
