@@ -65,7 +65,7 @@ showHero: true
 ## moovアトムとは何か
 
 <figure class="moov-structure">
-  <img src="/images/moov-faststart-structure.webp"
+  <img src="moov-faststart-structure.webp"
        alt="moovアトムの位置による動画ファイル構造の違い"
        loading="lazy" />
 
