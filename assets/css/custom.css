@@ -200,6 +200,7 @@ html.dark .prose h3 {
 @media (min-width: 1024px) and (max-width: 1279px) {
 
   /* Force main container to be vertical (Content Top, Sidebar Bottom) */
+  .recent-articles-section>div>div,
   .recent-articles-section>div {
     flex-direction: column !important;
   }
@@ -227,6 +228,27 @@ html.dark .prose h3 {
     max-width: none !important;
     padding-left: 0 !important;
     margin-top: 3rem !important;
+  }
+}
+/* Force horizontal layout for screens 1280px and above */
+@media (min-width: 1280px) {
+
+  .recent-articles-section>div>div,
+  .recent-articles-section>div {
+    flex-direction: row !important;
+  }
+
+  .article-main-section {
+    flex-direction: row !important;
+  }
+
+  /* Add spacing between content and sidebar */
+  .recent-articles-section aside {
+    padding-left: 2rem !important;
+  }
+
+  .article-main-section aside {
+    padding-left: 2rem !important;
   }
 }
 /* サイドバーコンテナ */

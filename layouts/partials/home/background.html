@@ -34,20 +34,22 @@
 </article>
 
 <section class="recent-articles-section relative z-10 pt-10">
-  <div class="flex flex-col lg:flex-row lg:items-start mt-8">
-    <div class="flex-grow min-w-0">
-      <section>
-        {{ partial "recent-articles/main.html" . }}
-      </section>
-      </div>
-      
-      <aside class="w-full lg:w-1/6 lg:ps-8 flex-shrink-0 mt-8 lg:mt-0">
-        <div class="lg:sticky lg:top-10">
-          {{ partial "author-profile-sidebar.html" . }}
-          {{ partial "popular-articles-sidebar.html" . }}
-          {{ partial "categories-sidebar.html" . }}
-          {{ partial "imobile-ad.html" . }}
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="flex flex-col xl:flex-row xl:items-start mt-8">
+      <div class="flex-grow min-w-0">
+        <section>
+          {{ partial "recent-articles/main.html" . }}
+        </section>
         </div>
-      </aside>
-      </div>
+        
+        <aside class="w-full xl:w-1/6 xl:ps-8 flex-shrink-0 mt-8 xl:mt-0">
+          <div class="xl:sticky xl:top-10">
+            {{ partial "author-profile-sidebar.html" . }}
+            {{ partial "popular-articles-sidebar.html" . }}
+            {{ partial "categories-sidebar.html" . }}
+            {{ partial "imobile-ad.html" . }}
+          </div>
+        </aside>
+        </div>
+  </div>
 </section>
