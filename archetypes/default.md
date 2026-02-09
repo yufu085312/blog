@@ -4,6 +4,7 @@ date: {{ .Date }}
 draft: true
 description: ""
 summary: ""
+slug: ""
 categories: [""]
 tags: [""]
 showSummary: true

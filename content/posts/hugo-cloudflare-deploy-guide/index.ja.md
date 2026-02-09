@@ -1,17 +1,20 @@
 ---
-title: "Hugo × Cloudflare Pagesでブログを構築する完全ガイド"
+title: "Hugo × Cloudflare Pagesで高速な技術ブログを構築する手順"
 date: 2025-12-29T20:50:00+09:00
-lastmod: 2026-01-25T21:23:00+09:00
-description: "HugoとCloudflare Pagesを使って、無料で高速な技術ブログを構築する手順を解説。Page Bundleの使い方、Blowfishテーマ設定、デプロイの実務ノウハウまで網羅します。"
+lastmod: 2026-02-09T23:12:00+09:00
+description: "HugoとCloudflare Pagesを使って、無料・高速な技術ブログを構築する手順を実体験ベースで解説。Blowfishテーマ設定、Page Bundle構成、Cloudflareデプロイ設定まで網羅します。"
 summary: "「Markdownで書いてGitHubに送るだけ」の爆速ワークフロー。Blowfishテーマを活用したリッチなUI構築と、エンジニアに最適なCloudflareデプロイの秘訣をステップバイステップで解説します。"
+slug: "hugo-cloudflare-pages-guide"
 categories: ["Web開発", "インフラ"]
 tags: ["Hugo", "Cloudflare", "Blowfish", "SSG", "デプロイ", "CI/CD"]
 showSummary: true
 showHero: true
-heroImage: "images/eyecatch/hugo-deploy-hero.webp"
+# heroImage: "featured.webp"
 ---
 
 {{< lead >}}
+**Hugo × Cloudflare Pagesで技術ブログを構築したい人向けの記事です。**
+
 私は以前、WordPressで技術ブログを運営していましたが、
 
 - 表示速度が遅い  
@@ -32,6 +35,18 @@ heroImage: "images/eyecatch/hugo-deploy-hero.webp"
 
 本記事は、**私自身がこの構成でブログを立ち上げた実体験をベースに**、最短で再現できる手順をまとめたものです。
 {{< /lead >}}
+
+<figure class="moov-structure">
+  <img src="architecture.webp"
+       alt="HugoとCloudflare Pagesを使った技術ブログのビルド・デプロイ構成図。MarkdownからGitHub経由で自動公開する流れ"
+       loading="lazy" />
+
+  <figcaption>
+    <strong>図：Hugo × Cloudflare Pages のビルド・デプロイ構成</strong>
+  </figcaption>
+</figure>
+
+この記事では、HugoとCloudflare Pagesを使った技術ブログ構築の全体構成から、実際のデプロイ設定・運用時の注意点までを一貫して解説します。
 
 ## 1. なぜ「Hugo × Cloudflare Pages」なのか？
 実際に検討した構成は、次の3つでした。
