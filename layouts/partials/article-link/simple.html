@@ -1,23 +1,33 @@
 {{/* Used by
-  1. list.html and term.html (when the cardView option is enabled)
-  2. Recent articles template (when the cardView option is enabled)
+  1. list.html and term.html (when the cardView option is not enabled)
+  2. Recent articles template (when the cardView option is not enabled)
   3. Shortcode list.html
 */}}
+{{ $constrainItemsWidth := site.Params.list.constrainItemsWidth | default false }}
 {{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
 
-{{/*
-  Extend to accept either a context (Page) or a dict with "page" and "index"
-*/}}
-{{ $page := . }}
-{{ $index := -1 }}
-{{ if reflect.IsMap . }}
-  {{ $page = .page }}
-  {{ $index = .index }}
+{{ $cardClasses := "flex flex-col md:flex-row relative" }}
+{{ $imgWrapperClasses := "" }}
+{{ $cardContentClasses := "" }}
+
+{{ if .Params.showCards | default site.Params.list.showCards }}
+  {{ $cardClasses = printf "%s overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600" $cardClasses }}
+  {{ $imgWrapperClasses = "" }}
+  {{ $cardContentClasses = printf "%s p-4" $cardContentClasses }}
+{{ else }}
+  {{ $cardClasses = $cardClasses }}
+  {{ $imgWrapperClasses = printf "%s thumbnail-shadow md:mr-7" $imgWrapperClasses }}
+  {{ $cardContentClasses = printf "%s mt-0 md:mt-0" $cardContentClasses }}
 {{ end }}
 
+{{ if $constrainItemsWidth }}
+  {{ $cardClasses = printf "%s max-w-prose" $cardClasses }}
+{{ end }}
+
+{{ $page := .Page }}
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
-{{ if not $page.Params.hideFeatureImage }}
+{{ if not .Params.hideFeatureImage }}
   {{/* frontmatter */}}
   {{ with $page }}
     {{ with .Params.featureimage }}
@@ -62,42 +72,20 @@
   {{ end }}
 {{ end }}
 
-{{/* Determine loading strategy based on index */}}
-{{ $loading := "lazy" }}
-{{ $fetchpriority := "low" }}
-{{ if and (ne $index -1) (lt $index 3) }}
-  {{ $loading = "eager" }}
-  {{ $fetchpriority = "high" }}
-{{ end }}
 
-<article
-  class="relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600 flex flex-col lg:flex-row">
-  <style>
-    @media (min-width: 1024px) {
-      .thumbnail_card {
-        width: 320px !important;
-        flex-shrink: 0;
-      }
-    }
-  </style>
+<article class="{{ $cardClasses }}">
   {{ with $featuredURL }}
-    <div class="flex-none relative overflow-hidden thumbnail_card w-full lg:w-80">
+    <div class="flex-none relative overflow-hidden {{ $imgWrapperClasses }} thumbnail">
       <img
         src="{{ . }}"
         role="presentation"
-        loading="{{ $loading }}"
+        loading="lazy"
         decoding="async"
-        fetchpriority="{{ $fetchpriority }}"
-        class="not-prose w-full h-full object-cover object-center">
+        class="not-prose absolute inset-0 w-full h-full object-cover">
     </div>
   {{ end }}
-  {{ if and $page.Draft .Site.Params.article.showDraftLabel }}
-    <span class="absolute top-0 right-0 m-2">
-      {{ partial "badge.html" (i18n "article.draft" | emojify) }}
-    </span>
-  {{ end }}
-  <div class="p-4 flex-1 flex flex-col justify-center">
-    <header>
+  <div class="{{ $cardContentClasses }}">
+    <header class="items-center text-start text-xl font-semibold">
       <a
         {{ with $page.Params.externalUrl }}
           href="{{ . }}" target="_blank" rel="external"
@@ -106,8 +94,8 @@
         {{ end }}
         class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-lg lg:text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
         <h2>
-          {{ $page.Title | emojify }}
-          {{ if $page.Params.externalUrl }}
+          {{ .Title | emojify }}
+          {{ if .Params.externalUrl }}
             <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
               <span class="rtl:hidden">&#8599;</span>
               <span class="ltr:hidden">&#8598;</span>
@@ -115,12 +103,19 @@
           {{ end }}
         </h2>
       </a>
+      {{ if and .Draft .Site.Params.article.showDraftLabel }}
+        <div class="ms-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</div>
+      {{ end }}
+      {{ if templates.Exists "partials/extend-article-link.html" }}
+        {{ partial "extend-article-link.html" . }}
+      {{ end }}
     </header>
     <div class="text-sm text-neutral-500 dark:text-neutral-400">
-      {{ partial "article-meta/basic.html" $page }}
+      {{ partial "article-meta/basic.html" . }}
     </div>
-    {{ if $page.Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-      <div class="prose dark:prose-invert py-1">{{ $page.Summary | plainify }}</div>
+    {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
+      <div class="prose dark:prose-invert max-w-fit py-1">{{ .Summary | plainify }}</div>
     {{ end }}
   </div>
+  <div class="px-6 pt-4 pb-2"></div>
 </article>

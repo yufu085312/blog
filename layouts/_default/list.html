@@ -7,7 +7,7 @@
     <div class="mx-auto max-w-7xl px-6">
   
       {{/* Header (Moved outside of the flex container) */}}
-      <header class="text-center mb-12">
+      <header class="text-center mb-0">
         {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs | default false) }}
         {{ partial "breadcrumbs.html" . }}
         {{ end }}
@@ -27,7 +27,7 @@
         <h1 class="home-title mt-5 font-extrabold text-neutral-800 dark:text-neutral-100">
           {{ .Title }}
         </h1>
-        <div class="mt-1 mb-8 text-base text-neutral-600 dark:text-neutral-400">
+        <div class="mt-1 mb-0 text-base text-neutral-600 dark:text-neutral-400">
           {{ partial "article-meta/list.html" (dict "context" . "scope" "single") }}
         </div>
     </header>
