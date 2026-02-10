@@ -2,7 +2,7 @@
   {{ $related := (where .Site.RegularPages "Type" "in" site.Params.mainSections).Related . | first 6 }}
   {{ with $related }}
     <h2 class="mt-8 text-2xl font-extrabold mb-10">{{ i18n "article.related_articles" | emojify }}</h2>
-    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+    <section class="related-articles-grid w-full grid gap-2 sm:gap-4 grid-cols-2 md:grid-cols-3">
       {{ range . }}
         {{ partial "article-link/card-related.html" . }}
       {{ end }}

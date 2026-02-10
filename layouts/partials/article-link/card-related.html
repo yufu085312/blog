@@ -68,7 +68,7 @@
       {{ partial "badge.html" (i18n "article.draft" | emojify) }}
     </span>
   {{ end }}
-  <div class="px-4 pb-4 pt-3 flex-1 flex flex-col items-start justify-start w-full">
+  <div class="px-2 pb-2 pt-2 lg:px-4 lg:pb-4 lg:pt-3 flex-1 flex flex-col items-start justify-start w-full">
     <a
       {{ with $page.Params.externalUrl }}
         href="{{ . }}" target="_blank" rel="external"
@@ -76,7 +76,7 @@
         href="{{ $page.RelPermalink }}"
       {{ end }}
       class="not-prose !m-0 !p-0 !border-none !ps-0 block w-full flex-none before:absolute before:inset-0">
-      <div class="text-sm lg:text-base font-bold text-neutral-800 dark:text-neutral !m-0 !p-0 !border-none !ps-0 !leading-tight !block !h-auto overflow-hidden max-h-[3em]">
+      <div class="text-[13px] lg:text-base font-bold text-neutral-800 dark:text-neutral !m-0 !p-0 !border-none !ps-0 !leading-tight !block !h-auto overflow-hidden max-h-[3.3em]">
         {{ .Title | emojify }}
         {{ if .Params.externalUrl }}
           <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
