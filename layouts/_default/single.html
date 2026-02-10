@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "single" }}
   <article style="padding-top: 80px;">
-    <div class="mx-auto max-w-7xl px-6">
+    <div class="mx-auto max-w-7xl px-2 lg:px-6">
       {{/* Header */}}
       <header id="single_header" class="mt-5 max-w-full">
       {{ if .Params.showBreadcrumbs | default (site.Params.article.showBreadcrumbs | default false) }}
