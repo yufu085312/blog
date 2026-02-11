@@ -1,8 +1,10 @@
 ---
-title: "🐋 さらば「自分の環境では動く」！ ゼロから学ぶ Docker 入門と基本コマンド"
+title: "現場視点で学ぶ Docker 入門【環境構築と基本コマンド】"
 date: 2025-12-13T11:15:00+09:00
+lastmod: 2026-02-11T19:25:00+09:00
 description: "「環境構築」の悩みをDockerで解決しませんか？コンテナ技術の基礎知識から、イメージ・コンテナの違い、実務で今すぐ使える主要コマンドまでを初心者向けに分かりやすく解説します。"
 summary: "アプリケーションとその実行環境をまるごとパッケージ化する Docker。環境依存のトラブルを防ぎ、開発・デプロイを爆速にする Docker の基本概念と必須コマンドをマスターしましょう。"
+slug: "docker-basic-tutorial"
 categories: ["開発ツール", "Docker"]
 tags: ["Docker", "コンテナ", "インフラ", "環境構築", "生産性向上"]
 showSummary: true
@@ -13,6 +15,16 @@ showHero: true
 Web開発やシステム運用において、「環境構築」は避けて通れない課題です。
 しかし実際には、**先輩のPCでは動くのに、自分の環境ではエラーが出る**といった経験をしたことがある方も多いのではないでしょうか。
 {{< /lead >}}
+
+<figure class="moov-structure">
+  <img src="docker-without-vs-with.webp"
+       alt="Dockerなしの場合とDockerありの場合の開発環境の違いを比較した図。Dockerなしでは環境差異が発生し、Dockerありでは同一環境が再現される様子"
+       loading="lazy" />
+
+  <figcaption>
+    <strong>図：Dockerなし vs Dockerありの開発環境比較</strong>
+  </figcaption>
+</figure>
 
 このような **「環境依存によるトラブル」** は、開発効率を大きく下げてしまいます。
 
@@ -31,6 +43,16 @@ Dockerとは、**コンテナ型仮想化技術**を利用して、アプリケ�
 
 ### 1.1 コンテナと仮想マシン（VM）の違い
 
+<figure class="moov-structure">
+  <img src="vm-vs-docker-architecture.webp"
+       alt="仮想マシンとDockerコンテナの構造比較図。VMはゲストOSを含み、DockerコンテナはホストOSを共有して軽量に動作する違いを示している"
+       loading="lazy" />
+
+  <figcaption>
+    <strong>図：VM と Dockerコンテナの構造比較</strong>
+  </figcaption>
+</figure>
+
 環境を隔離する技術としてこれまで主流だった「仮想マシン（VM）」と、Dockerの「コンテナ」は仕組みが大きく異なります。
 
 | 項目 | コンテナ（Docker） | 仮想マシン（VM） |
@@ -44,6 +66,16 @@ Dockerとは、**コンテナ型仮想化技術**を利用して、アプリケ�
 
 ### 1.2 Dockerの主要な構成要素（必須3用語）
 
+<figure class="moov-structure">
+  <img src="docker-image-container-flow.webp"
+       alt="Dockerfileからイメージを作成し、コンテナとして起動してアプリケーションが実行されるまでの流れ図"
+       loading="lazy" />
+
+  <figcaption>
+    <strong>図：Dockerfile → Image → Container → App起動 の基本フロー</strong>
+  </figcaption>
+</figure>
+
 Dockerを理解するうえで、まずは次の3つの用語を押さえておきましょう。
 
 1.  **イメージ（Image）**
@@ -56,6 +88,16 @@ Dockerを理解するうえで、まずは次の3つの用語を押さえてお�
 ---
 
 ## 2. Dockerの基本的な使い方とコマンド
+
+<figure class="moov-structure">
+  <img src="docker-image-container-app.webp"
+       alt="DockerfileからImageを作成し、Containerを起動してアプリケーションが実行されるまでの流れ図。docker build と docker run の基本的なワークフローを示している"
+       loading="lazy" />
+
+  <figcaption>
+    <strong>図：Image → Container → Running App の基本フロー</strong>
+  </figcaption>
+</figure>
 
 Dockerの基本的なワークフローは、**手順を書く → 設計図を作る → 実行する**の3ステップです。
 
