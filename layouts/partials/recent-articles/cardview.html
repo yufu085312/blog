@@ -15,9 +15,7 @@
 </style>
 
 <section class="w-full recent-articles-grid">
-  {{ range first $recentArticles (.Paginate (where .Site.RegularPages "Type" "in"
-    .Site.Params.mainSections)).Pages
-  }}
+  {{ range first $recentArticles (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
     {{ partial "article-link/card.html" . }}
   {{ end }}
 </section>
