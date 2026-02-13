@@ -6,7 +6,9 @@
     "@id": "{{ site.BaseURL | safeJS }}#website",
     "url": "{{ site.BaseURL | safeJS }}",
     "name": "{{ .Site.Title | safeJS }}",
-    {{ with .Site.Params.alternateName }}"alternateName": "{{ . | safeJS }}",{{ end }}
+    {{ if and .Site.Params.alternateName (ne .Site.Params.alternateName .Site.Title) }}
+    "alternateName": "{{ .Site.Params.alternateName | safeJS }}",
+    {{ end }}
     {{ with .Site.Params.description }}"description": "{{ . | safeJS }}",{{ end }}
     {{ with .Site.LanguageCode }}"inLanguage": "{{ . }}",{{ end }}
     "publisher": {
