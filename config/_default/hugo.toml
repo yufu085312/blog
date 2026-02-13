@@ -33,7 +33,7 @@ buildFuture = false
 enableEmoji = true
 
 [pagination]
-  pagerSize = 9
+  pagerSize = 8
 
 [imaging]
   anchor = 'Center'
