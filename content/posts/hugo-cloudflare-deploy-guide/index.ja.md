@@ -162,9 +162,11 @@ Markdownで書き溜めた記事は将来、別のプラットフォームへ移
 ---
 
 ### 📘 関連資料
+<div class="flex flex-col gap-2 items-start">
 {{< button href="https://blowfish.page/docs/" target="_blank" >}}
 Blowfish 公式ドキュメント
 {{< /button >}}
 {{< button href="https://developers.cloudflare.com/pages/" target="_blank" >}}
 Cloudflare Pages ドキュメント
 {{< /button >}}
+</div>
