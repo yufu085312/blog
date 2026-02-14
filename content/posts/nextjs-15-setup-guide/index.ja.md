@@ -1,5 +1,5 @@
 ---
-title: "Next.js 15 の環境構築手順と徹底解説<br>~モダンWeb開発の最適解を理解しながらセットアップ~"
+title: "Next.js 15 の環境構築手順と徹底解説"
 date: 2026-01-04T16:33:23+09:00
 draft: false
 description: "Next.js 15の環境構築手順から、App Router、React Server Components、Turbopack、Metadata APIまで、モダンWeb開発に必要な概念を体系的に解説。最新バージョンの進化を理解し、高速でSEOに強いサイトを構築しましょう。"
