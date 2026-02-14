@@ -1,7 +1,7 @@
 ---
 title: 'なぜ動画が再生されない？ffmpeg faststart'
 date: 2026-01-24T13:11:21+09:00
-draft: false
+draft: true
 description: "動画が再生されない原因はファイル構造にあることが多い。ffmpeg faststartでmoovアトムを先頭に移動し、再生トラブルを防ぐ方法を実例付きで解説します。"
 summary: "動画が再生されない原因をmoovアトムの構造から解説し、ffmpeg faststartで確実に再生トラブルを防ぐ実務向けの対処法をまとめます。"
 categories: ["動画処理", "Web開発"]
