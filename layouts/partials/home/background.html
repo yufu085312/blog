@@ -1,34 +1,63 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 
-<article class="max-w-full">
-  <div class="relative">
-    <div class="mx-auto max-w-7xl">
-      <div class="relative flex flex-col items-center justify-center px-2 lg:px-6 py-12 text-center" style="margin-top: 90px;">
-        <style>
-          .home-title {
-            font-size: 1.5rem !important;
-            line-height: 2rem !important;
-          }
-          @media (min-width: 853px) {
-            .home-title {
-              font-size: 2.25rem !important;
-              line-height: 2.5rem !important;
-            }
-          }
-        </style>
-        <h1 class="home-title mb-4 font-extrabold text-neutral-900 dark:text-neutral">
-          {{ .Site.Title }}
-        </h1>
-        {{ with .Site.Params.Author.headline }}
-          <h2 class="mt-0 text-xl text-neutral-500 dark:text-neutral-400">
-            {{ . | markdownify }}
-          </h2>
-        {{ end }}
-        
-        <div class="prose dark:prose-invert w-full max-w-none text-center">
-          {{ .Content }}
+<article class="max-w-full w-full relative overflow-hidden">
+  {{/* 背景装飾 */}}
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+    <div class="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary-400/20 blur-[100px] animate-pulse-slow"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-secondary-400/20 blur-[100px] animate-pulse-slow delay-1000"></div>
+  </div>
+
+  <div class="relative z-10 flex flex-col items-center justify-center px-4 pt-32 pb-10 lg:pt-32 lg:pb-16 text-center max-w-7xl mx-auto" style="padding-top: 100px;">
+    
+    {{/* メインコピー */}}
+    <h1 class="hero-title text-4xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-6 leading-tight">
+      <span class="block text-primary-600 dark:text-primary-400 mb-2 text-xl lg:text-2xl font-bold tracking-widest uppercase">エンジニア技術ブログ</span>
+      実体験から学ぶ。<br class="md:hidden" />現場で活きる技術知見。
+    </h1>
+
+    {{/* サブコピー */}}
+    <p class="hero-subtitle mt-4 text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto mb-12 leading-relaxed">
+      Web開発・バックエンド・インフラ・セキュリティ。<br class="hidden md:inline" />
+      実務で遭遇したトラブルと解決策を含めた、<br class="hidden md:inline" />
+      エンジニアの成長を加速させるナレッジベース。
+    </p>
+
+    {{/* バリューカード */}}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl px-2">
+      
+      {{/* Card 1 */}}
+      <div class="value-card group p-6 rounded-2xl bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        <div class="icon-wrapper w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.272-.773.833-.23 1.94-.23 3.293.723 1.333.94 2.227 1.968 2.227 1.968m-11.45 6.634a4.131 4.131 0 00-6.182-4.542L2.25 10.5h9.75l-2.083 4.67z" />
+          </svg>
         </div>
+        <h3 class="text-lg font-bold text-neutral-900 dark:text-white mb-2">トラブルシューティング</h3>
+        <p class="text-sm text-neutral-600 dark:text-neutral-400">エラーの表層だけでなく、根本原因と解決プロセスを徹底解説。再発防止につなげます。</p>
       </div>
+
+      {{/* Card 2 */}}
+      <div class="value-card group p-6 rounded-2xl bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        <div class="icon-wrapper w-12 h-12 rounded-full bg-secondary-100 dark:bg-secondary-900/30 text-secondary-600 dark:text-secondary-400 flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-neutral-900 dark:text-white mb-2">フルスタックな技術領域</h3>
+        <p class="text-sm text-neutral-600 dark:text-neutral-400">フロントエンドからインフラ、セキュリティまで。特定領域に留まらない広い視野を提供します。</p>
+      </div>
+
+      {{/* Card 3 */}}
+      <div class="value-card group p-6 rounded-2xl bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        <div class="icon-wrapper w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-neutral-900 dark:text-white mb-2">実務直結のノウハウ</h3>
+        <p class="text-sm text-neutral-600 dark:text-neutral-400">教科書的な理論だけでなく、実際の開発現場で使える実践的な知見とベストプラクティス。</p>
+      </div>
+      
     </div>
   </div>
 </article>
