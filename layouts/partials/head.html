@@ -33,6 +33,10 @@
   {{ with .Params.robots }}
     <meta name="robots" content="{{ . }}">
   {{ end }}
+  {{/* タクソノミー（/tags/, /categories/）ページをnoindexにする */}}
+  {{ if or (eq .Kind "taxonomy") (eq .Kind "term") }}
+    <meta name="robots" content="noindex, follow">
+  {{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
   {{ range .Translations }}

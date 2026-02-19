@@ -1,7 +1,7 @@
 ---
 title: "サーバー代なしでブログを始める方法【2026年最新版】"
 date: 2026-02-16T00:05:23+09:00
-draft: false
+draft: true
 description: "サーバー代をかけずにブログを始めたい初心者向けに、完全無料で運営できる方法を2026年最新版として解説。Hugo × Cloudflare Pagesを使い、必要なのはドメイン代のみの構成を紹介します。"
 summary: "WordPressはお金がかかる。でもブログは無料で始められる。サーバー代0円・広告費0円で運営できる現実的なブログ構成を、初心者にも分かりやすく解説します。"
 slug: "blog-without-server-cost"
@@ -185,5 +185,4 @@ Cloudflare Pagesは、
 **Hugo × Cloudflare Pagesで実際に技術ブログを運営しているWebエンジニア**の実体験をもとに執筆しています。
 
 ※ なお、本ブログでは  
-**Hugo × Cloudflare Pagesで高速な技術ブログを構築する手順**についても解説しています。  
-→ [Hugo × Cloudflare Pagesで高速な技術ブログを構築する手順](/posts/hugo-cloudflare-deploy-guide/)
+[Hugo × Cloudflare Pagesで高速な技術ブログを構築する手順](/posts/hugo-cloudflare-deploy-guide/)についても解説しています。
