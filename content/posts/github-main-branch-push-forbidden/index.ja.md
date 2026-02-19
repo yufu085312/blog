@@ -178,8 +178,10 @@ main
 
 そこで重要なのが、**GitHubの設定で「物理的に禁止する」こと**です。
 
-:contentReference[oaicite:0]{index=0} では、  
+GitHubの設定を使えば、  
 **mainブランチへの直接pushを設定で禁止**できます。
+
+これは「Branch protection rules」という機能で実現できます。
 
 ### Branch protection rules
 
