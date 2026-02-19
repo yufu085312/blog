@@ -1,7 +1,7 @@
 ---
 title: "Next.js 環境構築の完全手順書｜最初にやるべき設定まとめ"
 date: 2026-02-14T15:30:00+09:00
-draft: false
+draft: true
 description: "Next.jsの環境構築で最初にやるべき設定を、create-next-appから初期ディレクトリ構成、TypeScript・Lint・Git設定まで実務視点でまとめた完全手順書です。"
 summary: "create-next-appで終わらせない。実務でそのまま使える Next.js 環境構築の手順を、初期設定・設計の考え方込みで解説します。"
 slug: "nextjs-environment-setup-guide"
