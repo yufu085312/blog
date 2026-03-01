@@ -261,7 +261,9 @@ html.dark .prose h3 {
 /* サイドバーの幅を制限 */
 @media (min-width: 1280px) {
   aside:has(.popular-articles-sidebar) {
+    width: 360px !important;
     max-width: 360px !important;
+    flex-shrink: 0 !important;
   }
 }
 

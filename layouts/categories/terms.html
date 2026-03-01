@@ -27,7 +27,8 @@
     </header>
 
     <div class="recent-articles-section">
-      <div class="flex flex-col lg:flex-row lg:items-start">
+      <div class="mx-auto max-w-7xl px-2 lg:px-6">
+      <div class="flex flex-col xl:flex-row xl:items-start">
         {{/* Main Content Area */}}
         <div class="flex-grow min-w-0">
 
@@ -72,13 +73,14 @@
         </div>
           
         {{/* Sidebar Area (Desktop: Right, Mobile: Bottom) */}}
-        <aside class="w-full lg:w-1/6 lg:ps-8 mt-12 lg:mt-0 flex-shrink-0">
-          <div class="lg:sticky lg:top-10">
+        <aside class="w-full xl:w-1/6 xl:ps-8 flex-shrink-0 mt-8 xl:mt-0">
+          <div class="xl:sticky xl:top-10">
             {{ partial "popular-articles-sidebar.html" . }}
             {{ partial "categories-sidebar.html" . }}
             <!-- {{ partial "imobile-ad.html" . }} -->
           </div>
         </aside>
+      </div>
       </div>
     </div>
   </div>
