@@ -1,0 +1,51 @@
+{{ define "main" }}
+  {{ .Scratch.Set "scope" "single" }}
+
+  <div class="relative w-full py-16">
+    <div class="mx-auto max-w-7xl px-2 lg:px-6">
+
+      {{/* Header */}}
+      <header class="mt-5 max-w-full mb-8">
+        {{ if .Params.showBreadcrumbs | default (site.Params.article.showBreadcrumbs | default false) }}
+          {{ partial "breadcrumbs.html" . }}
+        {{ end }}
+        <h1 class="mt-0 text-2xl lg:text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+          {{ .Title | emojify | safeHTML }}
+        </h1>
+      </header>
+
+      {{/* Body: list.htmlと同じ2段構造 */}}
+      <div class="recent-articles-section">
+        <div class="flex flex-col xl:flex-row xl:items-start">
+
+          {{/* メインコンテンツ */}}
+          <div class="flex-grow min-w-0" style="flex: 1 1 0%; min-width: 0;">
+            {{ $enableToc := site.Params.article.showTableOfContents | default false }}
+            {{ $enableToc = .Params.showTableOfContents | default $enableToc }}
+            {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
+
+            {{ if $showToc }}
+              <div class="toc mb-8 print:hidden">
+                {{ partial "toc.html" . }}
+              </div>
+            {{ end }}
+            <div class="prose dark:prose-invert mb-20" style="max-width: none;">
+              {{ .Content }}
+            </div>
+          </div>
+
+          {{/* サイドバー */}}
+          <aside class="w-full xl:w-1/6 xl:ps-8 mt-12 xl:mt-0 flex-shrink-0">
+            <div class="xl:sticky xl:top-10">
+              {{ partial "author-profile-sidebar.html" . }}
+              {{ partial "popular-articles-sidebar.html" . }}
+              {{ partial "categories-sidebar.html" . }}
+            </div>
+          </aside>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+{{ end }}
