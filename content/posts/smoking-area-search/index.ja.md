@@ -5,7 +5,7 @@ lastmod: 2026-01-27T22:43:00+09:00
 draft: true
 description: "Next.js・Firebase・Leafletを使って、喫煙所情報を共有できるWebアプリ「喫煙所サーチ」を個人開発しました。設計、実装、パフォーマンス最適化、直面した課題と解決策を実務視点で解説します。"
 summary: "Next.js / Firebase / Leaflet.js を使って、喫煙所情報を共有できる位置情報Webアプリを個人開発しました。設計から実装、課題と改善点までをまとめます。"
-categories: ["個人開発", "Web開発"]
+categories: ["フロントエンド"]
 tags: ["Next.js", "Firebase", "Leaflet", "位置情報", "地図アプリ", "個人開発", "フロントエンド"]
 showSummary: true
 showHero: true

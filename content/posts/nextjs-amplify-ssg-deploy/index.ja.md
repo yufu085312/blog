@@ -5,7 +5,7 @@ draft: false
 description: "Next.jsのSSG（Static Site Generation）サイトをAWS Amplifyにデプロイする方法を解説。GitHub連携からamplify.ymlのビルド設定、公開までの手順を初心者向けにまとめています。"
 summary: "Next.jsのSSGサイトをAWS Amplifyで公開する方法を解説します。GitHub連携、ビルド設定（amplify.yml）、デプロイまでの手順をわかりやすく紹介します。"
 slug: "nextjs-amplify-ssg-deploy"
-categories: ["Next.js"]
+categories: ["インフラ"]
 tags: ["Next.js","AWS","Amplify","SSG","デプロイ"]
 showSummary: true
 showHero: true

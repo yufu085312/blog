@@ -4,7 +4,7 @@ date: 2026-01-04T16:33:23+09:00
 draft: false
 description: "Next.js 15の環境構築手順から、App Router、React Server Components、Turbopack、Metadata APIまで、モダンWeb開発に必要な概念を体系的に解説。最新バージョンの進化を理解し、高速でSEOに強いサイトを構築しましょう。"
 summary: "Next.js 15の環境構築手順と、App Router・RSC・Server Actions・画像最適化・SEO対策など、モダンWeb開発に必要な主要概念を徹底解説した技術記事です。"
-categories: ["Web開発", "Next.js"]
+categories: ["フロントエンド"]
 tags: ["Next.js", "React", "App Router", "TypeScript", "Tailwind CSS", "SEO"]
 showSummary: true
 showHero: true

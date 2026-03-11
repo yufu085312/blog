@@ -5,7 +5,7 @@ draft: false
 description: "GitHub運用において、mainブランチへ直接pushする行為がなぜ禁止されるのかを解説。事故が起きる理由、正しいブランチ運用ルール、Pull Request前提の安全な開発フローを整理します。"
 summary: "mainブランチへの直接pushはなぜ危険なのか？GitHubを使ったチーム開発・個人開発において守るべきブランチ運用ルールを、実例とともに解説します。"
 slug: "github-main-branch-push-forbidden"
-categories: ["GitHub", "チーム開発"]
+categories: ["ツール"]
 tags: ["GitHub", "ブランチ運用", "mainブランチ", "Pull Request"]
 showSummary: true
 showHero: true

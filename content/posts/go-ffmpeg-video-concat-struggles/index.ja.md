@@ -5,7 +5,7 @@ lastmod: 2026-01-27T22:42:00+09:00
 draft: true
 description: "Go言語からFFmpegを使って動画連結を実装した際に踏んだ罠をまとめました。concatの3つの仕様、再エンコード判断、os/execのデッドロック、音ズレ対策まで、実務で役立つ知見を共有します。"
 summary: "Go言語からFFmpegで動画連結を実装した際のトラブル集。concat仕様の罠、デッドロック、再エンコード判断、音ズレ対策まで実務目線で解説します。"
-categories: ["Go", "FFmpeg", "動画処理"]
+categories: ["バックエンド"]
 tags: ["Go", "FFmpeg", "動画連結", "トラブルシューティング", "パフォーマンスチューニング"]
 showSummary: true
 showHero: true

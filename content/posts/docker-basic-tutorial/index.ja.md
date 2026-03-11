@@ -6,7 +6,7 @@ draft: true
 description: "「環境構築」の悩みをDockerで解決しませんか？コンテナ技術の基礎知識から、イメージ・コンテナの違い、実務で今すぐ使える主要コマンドまでを初心者向けに分かりやすく解説します。"
 summary: "アプリケーションとその実行環境をまるごとパッケージ化する Docker。環境依存のトラブルを防ぎ、開発・デプロイを爆速にする Docker の基本概念と必須コマンドをマスターしましょう。"
 slug: "docker-basic-tutorial"
-categories: ["開発ツール", "Docker"]
+categories: ["ツール"]
 tags: ["Docker", "コンテナ", "インフラ", "環境構築", "生産性向上"]
 showSummary: true
 showHero: true

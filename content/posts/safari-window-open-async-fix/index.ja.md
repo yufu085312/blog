@@ -4,7 +4,7 @@ date: 2026-01-21T23:01:39+09:00
 draft: false
 description: "Safariで非同期処理後にwindow.openが動かない原因と、別タブ遷移を安定させる2つの実践的な解決策を解説します。"
 summary: "Safariで非同期処理後にwindow.openがブロックされ、別タブ遷移できない問題の原因と対処法を解説します。全ブラウザで安定動作する実務向けの実装パターンを紹介します。"
-categories: ["JavaScript", "ブラウザ仕様"]
+categories: ["フロントエンド"]
 tags: ["Safari", "window.open", "async/await", "ポップアップブロック", "フロントエンド"]
 showSummary: true
 showHero: true
