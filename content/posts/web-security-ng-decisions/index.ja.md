@@ -5,7 +5,7 @@ draft: true
 description: "Webセキュリティ対策で実務上よく見かける「やってはいけない判断」を、セキュリティレビュー視点で実体験ベースに解説。。CSRF、認証、管理画面、SameSiteなど、現場で実際にNGとされた判断例をまとめます。"
 summary: "「それ、実は危険です」。実務のセキュリティレビューや障害対応で実際に見てきた、WebセキュリティにおけるNG判断をケース別に解説します。"
 slug: "web-security-ng-decisions"
-categories: ["セキュリティ", "Web開発"]
+categories: ["セキュリティ"]
 tags: ["Webセキュリティ", "CSRF", "認証", "脆弱性", "実務"]
 showSummary: true
 showHero: true

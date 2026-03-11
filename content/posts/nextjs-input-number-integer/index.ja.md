@@ -5,7 +5,7 @@ draft: false
 description: "Next.jsでinput type=numberを使っているのに「e」や「--」などが入力できてしまう問題の原因と、整数のみを安全に扱う実装方法を解説します。"
 summary: "Next.jsのinput type=numberで整数以外が入力できてしまう理由と、実務で使える対処法を具体的なコード例付きで解説します。"
 slug: "nextjs-input-number-integer"
-categories: ["Next.js"]
+categories: ["フロントエンド"]
 tags: ["Next.js", "React", "フォーム", "バリデーション"]
 showSummary: true
 showHero: true

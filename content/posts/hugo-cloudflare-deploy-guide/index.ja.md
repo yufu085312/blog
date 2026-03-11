@@ -5,7 +5,7 @@ lastmod: 2026-02-09T23:12:00+09:00
 description: "HugoとCloudflare Pagesを使って、無料・高速な技術ブログを構築する手順を実体験ベースで解説。Blowfishテーマ設定、Page Bundle構成、Cloudflareデプロイ設定まで網羅します。"
 summary: "「Markdownで書いてGitHubに送るだけ」の爆速ワークフロー。Blowfishテーマを活用したリッチなUI構築と、エンジニアに最適なCloudflareデプロイの秘訣をステップバイステップで解説します。"
 slug: "hugo-cloudflare-pages-guide"
-categories: ["Web開発", "インフラ"]
+categories: ["インフラ"]
 tags: ["Hugo", "Cloudflare", "Blowfish", "SSG", "デプロイ", "CI/CD"]
 showSummary: true
 showHero: true

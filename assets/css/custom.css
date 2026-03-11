@@ -629,8 +629,16 @@ article.rounded-lg.border:hover .text-neutral-500 {
 }
 
 /* ========================================
-   フッターメニューのホバーエフェクト
+                                                                                                                                                                                                                                                                 フッターメニューのホバーエフェクト＆右寄せ
    ======================================== */
+#site-footer nav {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+#site-footer nav ul {
+  justify-content: flex-end;
+}
 #site-footer nav a {
   transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
 }
@@ -640,6 +648,143 @@ article.rounded-lg.border:hover .text-neutral-500 {
   text-decoration: none !important;
 }
 
+/* ========================================
+   ヘッダー2行目（サブナビゲーション）の中央寄せ＆全幅化
+   ======================================== */
+.main-menu+.main-menu {
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.main-menu+.main-menu>div {
+  width: 100% !important;
+  justify-content: center !important;
+  gap: 2rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  /* 2行目に薄い背景を敷いて区切りを明確に */
+  border-radius: 9999px;
+  padding: 0.25rem 1rem;
+}
+
+/* 1行目のメインメニュー：常に黒（ダークモードでも変更しない） */
+.main-menu:first-child a,
+.main-menu:first-child p {
+  color: #000 !important;
+}
+
+/* 2行目のカテゴリーメニュー：メインカラー（青） */
+.main-menu+.main-menu p {
+  color: #3b82f6 !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important; /* ホバー時の変化を出すために標準を少し下げる(800->700) */
+  letter-spacing: 0.025em;
+  transition: all 0.2s ease-in-out;
+}
+
+.main-menu+.main-menu a:hover p {
+  font-weight: 900 !important;
+  color: #1d4ed8 !important; /* 少し濃い青 */
+  transform: scale(1.05);
+}
+
+/* ========================================
+   ヘッダー2段化に伴うコンテンツ上部余白の調整
+   ======================================== */
+/* 記事一覧・Aboutページなどのリストレイアウト */
+#main-content>.relative.py-16 {
+  padding-top: 6rem !important;
+}
+
+/* 記事詳細ページ */
+article[style*="padding-top: 80px"] {
+  padding-top: 80px !important;
+}
+
+/* モバイル対応（ヘッダーが重なる場合） */
+@media (max-width: 640px) {
+  #main-content>.relative.py-16 {
+    padding-top: 3.5rem !important;
+  }
+  /* 記事詳細ページのモバイル用余白 */
+  article[style*="padding-top: 80px"] {
+    padding-top: 55px !important;
+  }
+}
+
+/* ========================================
+   モバイルメニュー（ハンバーガーメニュー）のデザイン改善
+   ======================================== */
+/* メニュー全体の背景と配置 */
+#menu-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  backdrop-filter: blur(8px) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+html.dark #menu-wrapper {
+  background-color: rgba(23, 23, 23, 0.95) !important;
+}
+
+/* メニューリストの配置を中央に固定 */
+#menu-wrapper ul {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+/* 閉じるボタンの調整 */
+#menu-close-button {
+  position: absolute !important;
+  top: 2rem !important;
+  right: 2rem !important;
+}
+
+/* メインメニュー（ホーム・記事一覧など） */
+#menu-wrapper ul:first-of-type li a p {
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+  color: #171717 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+html.dark #menu-wrapper ul:first-of-type li a p {
+  color: #f5f5f5 !important;
+}
+
+/* セパレーター（横線）を短く洗練されたデザインに */
+#menu-wrapper hr {
+  width: 40px !important;
+  border: none !important;
+  border-top: 2px solid #3b82f6 !important;
+  margin: 2rem auto !important;
+  opacity: 0.5 !important;
+}
+
+/* サブナビゲーション（カテゴリーメニュー） */
+#menu-wrapper ul:last-of-type li a p {
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: #3b82f6 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+html.dark #menu-wrapper ul:last-of-type li a p {
+  color: #60a5fa !important;
+}
+
+/* ホバー/アクティブ時の挙動向上 */
+#menu-wrapper li a:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
 /* ========================================
    タクソノミー（カテゴリー・タグ）一覧ページ
    ======================================== */

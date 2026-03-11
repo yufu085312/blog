@@ -6,7 +6,7 @@ draft: true
 description: "GitとGitHubの違いから、実務で必須の基本コマンド、現場で推奨されるブランチ運用、Pull Requestの作法までを分かりやすく解説します。初心者エンジニアがチーム開発の現場で即戦力として動けるようになるための完全ガイドです。"
 summary: "「何となく使う」から「仕組みを理解して使う」へ。現場で役立つGitの基本コマンドと、GitHubを用いたチーム開発の標準的な流れをステップバイステップで解説します。"
 slug: "git-basic-commands"
-categories: ["開発ツール", "Git"]
+categories: ["ツール"]
 tags: ["Git", "GitHub", "チーム開発", "新人研修", "生産性向上"]
 showSummary: true
 showHero: true

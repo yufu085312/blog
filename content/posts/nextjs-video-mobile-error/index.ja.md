@@ -4,7 +4,7 @@ date: 2026-01-31T16:52:42+09:00
 draft: true
 description: "Next.jsで動画は再生されているのにモバイルだけエラーが出る問題に遭遇。原因はplay()メソッドとモバイルブラウザの自動再生制限でした。Safari / Chromeモバイルの仕様と実務での対処法を解説。"
 summary: "Next.jsで動画は問題なく再生されているのに、モバイル端末だけエラーが表示される不可解な現象に遭遇。原因はplay()メソッドとモバイルブラウザの自動再生ポリシーでした。実体験をもとに原因と対処法を解説します。"
-categories: ["Next.js", "フロントエンド", "トラブルシューティング"]
+categories: ["フロントエンド"]
 tags: ["Next.js", "React", "動画再生", "モバイル対応", "autoplay", "playメソッド", "DOMException", "ブラウザ仕様", "Web開発"]
 showSummary: true
 showHero: true

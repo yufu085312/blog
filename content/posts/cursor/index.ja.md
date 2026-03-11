@@ -5,7 +5,7 @@ lastmod: 2026-01-25T21:47:00+09:00
 draft: true
 description: "AI統合型エディタCursorを実務目線で徹底解説。GitHub Copilotとの違い、VS Codeからの移行方法、主要機能、プロンプトのコツまで具体例付きで紹介します。"
 summary: "AI統合型エディタCursorを実務目線で解説。GitHub Copilotとの違い、主要機能、導入手順、使いこなしのコツまで、現場で使える知識をまとめます。"
-categories: ["開発ツール", "AI"]
+categories: ["ツール"]
 tags: ["Cursor", "AI", "GitHub Copilot", "VS Code", "生産性向上"]
 showSummary: true
 showHero: true

@@ -6,7 +6,7 @@ draft: true
 description: "冷蔵庫の余り食材からAIが自動でレシピを提案するWebアプリ「Leftover Recipe AI」を個人開発しました。Gemini API、Vite、無料インフラで構築した仕組みと、食品ロス削減への取り組みを紹介します。"
 summary: "冷蔵庫の余り物からAIがレシピを自動生成。Gemini APIとViteで構築した、食品ロス削減に役立つ個人開発Webアプリを紹介します。"
 tags: ["AI", "Gemini", "個人開発", "料理", "JavaScript"]
-categories: ["プロジェクト"]
+categories: ["フロントエンド"]
 showSummary: true
 showHero: true
 ---

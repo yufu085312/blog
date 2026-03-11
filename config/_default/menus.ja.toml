@@ -11,14 +11,44 @@
 [[main]]
   name = "運営者情報"
   url = "/about/"
+  weight = 50
+
+[[subnavigation]]
+  name = "フロントエンド"
+  url = "/categories/フロントエンド/"
+  weight = 10
+
+[[subnavigation]]
+  name = "バックエンド"
+  url = "/categories/バックエンド/"
   weight = 20
 
-[[main]]
+[[subnavigation]]
+  name = "インフラ"
+  url = "/categories/インフラ/"
+  weight = 30
+
+[[subnavigation]]
+  name = "セキュリティ"
+  url = "/categories/セキュリティ/"
+  weight = 40
+
+[[subnavigation]]
+  name = "書籍"
+  url = "/categories/書籍/"
+  weight = 50
+
+[[subnavigation]]
+  name = "ツール"
+  url = "/categories/ツール/"
+  weight = 60
+
+[[footer]]
   name = "お問い合わせ"
   url = "/contact/"
-  weight = 30
+  weight = 10
 
 [[footer]]
   name = "プライバシーポリシー"
   url = "/privacy/"
-  weight = 10
+  weight = 20

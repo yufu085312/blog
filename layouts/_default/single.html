@@ -51,10 +51,6 @@
           <div class="hidden lg:block">
             {{ partial "popular-articles-sidebar.html" . }}
           </div>
-          {{/* カテゴリーサイドバー (PC版のみ) */}}
-          <div class="hidden lg:block">
-            {{ partial "categories-sidebar.html" . }}
-          </div>
         </div>
       </aside>
       {{ end }}
@@ -98,10 +94,6 @@
         {{/* 人気記事ランキング (SP版のみ) */}}
         <div class="block lg:hidden">
           {{ partial "popular-articles-sidebar.html" . }}
-        </div>
-        {{/* カテゴリーサイドバー (SP版のみ) */}}
-        <div class="block lg:hidden">
-          {{ partial "categories-sidebar.html" . }}
         </div>
       </div>
 
