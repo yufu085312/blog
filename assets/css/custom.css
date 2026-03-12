@@ -240,15 +240,18 @@ html.dark .prose h3 {
 
   .article-main-section {
     flex-direction: row !important;
+    align-items: flex-start !important; /* Important for sticky sidebar */
   }
 
   /* Add spacing between content and sidebar */
   .recent-articles-section aside {
     padding-left: 2rem !important;
+    height: 100% !important;
   }
 
   .article-main-section aside {
     padding-left: 2rem !important;
+    height: 100% !important;
   }
 }
 /* サイドバーコンテナ */

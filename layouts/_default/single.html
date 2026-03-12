@@ -41,8 +41,8 @@
       {{/* サイドバー - プロフィールと人気記事を表示 */}}
       {{/* サイドバー - プロフィールと人気記事を表示 (pageレイアウト以外で表示) */}}
       {{ if ne .Layout "page" }}
-      <aside class="w-full lg:w-1/6 flex-shrink-0 order-first lg:order-last mt-12 lg:mt-0 lg:ps-8">
-        <div class="toc ps-5 print:hidden lg:sticky {{ $topClass }}">
+      <aside class="w-full lg:w-1/6 flex-shrink-0 order-first lg:order-last mt-12 lg:mt-0 lg:ps-8 h-full">
+        <div class="ps-5 print:hidden lg:sticky {{ $topClass }} self-start">
           {{/* プロフィールサイドバー (PC版のみ) */}}
           <div class="hidden lg:block">
             {{ partial "author-profile-sidebar.html" . }}
