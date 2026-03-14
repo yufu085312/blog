@@ -74,7 +74,6 @@ Personal Access Token（PAT）は、GitHubのAPIやGit操作を行うための**
 例
 
 ```
-
 git-access-token
 
 ```
@@ -88,7 +87,6 @@ git-access-token
 おすすめ
 
 ```
-
 90 days
 
 ```
@@ -112,7 +110,6 @@ Git操作で使用する場合は以下をチェックします。
 </figure>
 
 ```
-
 repo
 
 ```
@@ -132,7 +129,6 @@ repo
 設定が完了したら
 
 ```
-
 Generate token
 
 ```
@@ -226,7 +222,6 @@ Tokenが漏洩した場合は、GitHubの設定画面から **すぐにRevoke（
 git push時にユーザー名とパスワードを求められた場合、以下を入力します。
 
 ```
-
 username：GitHubユーザー名
 password：Personal Access Token
 
@@ -322,7 +317,6 @@ Tokenが漏洩した可能性がある場合は、すぐにGitHubの設定画面
 scope設定が不足している可能性があります。
 
 ```
-
 repo
 
 ```

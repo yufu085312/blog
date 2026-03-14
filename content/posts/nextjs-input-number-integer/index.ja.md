@@ -1,7 +1,7 @@
 ---
 title: 'Next.jsのnumber型で整数しか入力できないようにする方法'
 date: 2026-02-28T18:34:18+09:00
-draft: false
+draft: true
 description: "Next.jsでinput type=numberを使っているのに「e」や「--」などが入力できてしまう問題の原因と、整数のみを安全に扱う実装方法を解説します。"
 summary: "Next.jsのinput type=numberで整数以外が入力できてしまう理由と、実務で使える対処法を具体的なコード例付きで解説します。"
 slug: "nextjs-input-number-integer"
