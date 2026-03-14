@@ -1,31 +1,22 @@
 ---
 title: "お問い合わせ"
-layout: "page"
+layout: "contact"
 showDate: false
 sitemap:
   priority: 0.5
 ---
 
-当ブログへのお問い合わせは、以下のSNSのダイレクトメッセージ、または各プラットフォームにて受け付けております。
+当ブログへのお問い合わせは、以下のフォームよりお気軽にどうぞ。  
+すべてのメッセージに回答をお約束するものではございませんが、貴重なご意見として拝読させていただきます。
 
-## メールでのお問い合わせ
-
-以下のメールアドレスにて受け付けております。
-
-- **Email**: [fuyu0853@icloud.com](mailto:fuyu0853@icloud.com)
-
-## SNS経由でのお問い合わせ
-
-もっとも迅速に対応可能です。お気軽にメッセージをお送りください。
-
-- **X (Twitter)**: [@yufu_net](https://x.com/yufu_net)
-
-## その他のプラットフォーム
-
-技術的な内容に関するフィードバックなどは、以下のコメント欄や掲示板等でも歓迎しております。
-
-- **Zenn**: [yu_fu](https://zenn.dev/yu_fu)
+{{< contact-form id="xyknprva" >}}
 
 ---
 
-※すべてのお問い合わせに対して回答をお約束するものではございませんが、貴重なご意見としてすべて拝読させていただきます。
+## フォーム以外でのお問い合わせ
+
+以下のSNSや各プラットフォームでも受け付けております。
+
+- **Email**: [fuyu0853@icloud.com](mailto:fuyu0853@icloud.com)
+- **X (Twitter)**: [@yufu_net](https://x.com/yufu_net)
+- **Zenn**: [yu_fu](https://zenn.dev/yu_fu)
