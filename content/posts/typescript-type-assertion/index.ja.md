@@ -2,7 +2,7 @@
 
 title: 'TypeScriptの型アサーションとは？使い方と注意点をわかりやすく解説'
 date: 2026-03-10T01:00:00+09:00
-draft: false
+draft: true
 description: "TypeScriptの型アサーション（Type Assertion）の使い方を解説します。as構文や<>構文の違い、as constやNon-null assertion、よくあるエラーまで初心者向けに紹介します。"
 summary: "TypeScriptの型アサーションとは何かを初心者向けに解説。as構文の使い方やas const、Non-null assertion、よくあるエラーについて紹介します。"
 slug: "typescript-type-assertion"
