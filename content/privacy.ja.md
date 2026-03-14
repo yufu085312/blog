@@ -1,6 +1,6 @@
 ---
 title: "プライバシーポリシー"
-layout: "page"
+layout: "privacy"
 showDate: false
 sitemap:
   priority: 0.5

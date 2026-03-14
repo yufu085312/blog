@@ -1,0 +1,24 @@
+{{ define "main" }}
+  {{ .Scratch.Set "scope" "single" }}
+
+  <div class="relative w-full py-16">
+    <div class="mx-auto max-w-3xl px-2 lg:px-6">
+
+      {{/* Header */}}
+      <header class="mt-5 max-w-full mb-8">
+        {{ if .Params.showBreadcrumbs | default (site.Params.article.showBreadcrumbs | default false) }}
+          {{ partial "breadcrumbs.html" . }}
+        {{ end }}
+        <h1 class="mt-0 text-2xl lg:text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+          {{ .Title | emojify | safeHTML }}
+        </h1>
+      </header>
+
+      {{/* メインコンテンツ */}}
+      <div class="prose dark:prose-invert mb-8" style="max-width: none;">
+        {{ .Content }}
+      </div>
+
+    </div>
+  </div>
+{{ end }}
