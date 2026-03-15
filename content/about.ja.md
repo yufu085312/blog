@@ -79,7 +79,7 @@ sitemap:
 - **喫煙所表示アプリ**: [https://smoking.yu-fu.site](https://smoking.yu-fu.site)
 - **ルーレットアプリ**: [https://roulette.yu-fu.site](https://roulette.yu-fu.site)
 - **冷蔵庫レシピAI**: [https://ai-recipe.yu-fu.site/](https://ai-recipe.yu-fu.site/)
-- **文字数カウントツール**: [https://mojicount.yu-fu.site/](https://mojicount.yu-fu.site/)
+- **文字数カウント**: [https://mojicount.yu-fu.site/](https://mojicount.yu-fu.site/)
 
 ## SNSリンク
 
