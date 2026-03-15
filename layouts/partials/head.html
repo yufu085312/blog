@@ -16,8 +16,8 @@
     <title>{{ .Site.Title | emojify | plainify }}</title>
     <meta name="title" content="{{ .Site.Title | emojify | plainify }}">
   {{ else }}
-    <title>{{ .Title | emojify | plainify }} &middot; {{ .Site.Title | emojify | plainify }}</title>
-    <meta name="title" content="{{ .Title | emojify | plainify }} &middot; {{ .Site.Title | emojify | plainify }}">
+    <title>{{ .Title | emojify | plainify }}</title>
+    <meta name="title" content="{{ .Title | emojify | plainify }}">
   {{ end }}
 
   {{/* Metadata */}}
