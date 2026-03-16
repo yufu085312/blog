@@ -1,5 +1,5 @@
 <div style="height: 180px;"></div>
-<div class="fixed inset-x-0 z-100">
+<div id="main-header" class="fixed inset-x-0 z-100">
   <div
     class="absolute inset-x-0 top-0 h-full single_hero_background nozoom"
     style="opacity: 1 !important; background-color: #aad3f4 !important;"></div>
@@ -52,3 +52,10 @@
   src="{{ $backgroundBlur.RelPermalink }}"
   integrity="{{ $backgroundBlur.Data.Integrity }}"
   data-blur-id="menu-blur"></script>
+
+{{ $headerScroll := resources.Get "js/header-scroll.js" }}
+{{ $headerScroll = $headerScroll | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+<script
+  type="text/javascript"
+  src="{{ $headerScroll.RelPermalink }}"
+  integrity="{{ $headerScroll.Data.Integrity }}"></script>

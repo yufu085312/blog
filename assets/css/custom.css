@@ -102,6 +102,16 @@ html.dark article.rounded-lg.border {
       }
 }
 
+/* ヘッダーのスクロール追従（隠す・出す） */
+#main-header {
+  transition: transform 0.3s ease-in-out !important;
+  will-change: transform;
+}
+
+#main-header.header-hidden {
+  transform: translateY(-100%);
+}
+
 /* メインコンテンツコンテナの幅設定（標準の max-w-7xl を尊重） */
 .relative.flex.flex-col.grow {
   max-width: 100% !important;
