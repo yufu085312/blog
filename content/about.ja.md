@@ -76,6 +76,7 @@ sitemap:
 
 ## 開発実績
 
+- **貸し借り管理アプリ**: [https://kashikari.yu-fu.site/](https://kashikari.yu-fu.site/)
 - **喫煙所表示アプリ**: [https://smoking.yu-fu.site](https://smoking.yu-fu.site)
 - **ルーレットアプリ**: [https://roulette.yu-fu.site](https://roulette.yu-fu.site)
 - **冷蔵庫レシピAI**: [https://ai-recipe.yu-fu.site/](https://ai-recipe.yu-fu.site/)
