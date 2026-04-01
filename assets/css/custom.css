@@ -121,6 +121,10 @@ html.dark article.rounded-lg.border {
 body {
   max-width: 100% !important;
 }
+/* ライトモードの背景色を少し落ち着いたオフホワイトに設定 */
+html:not(.dark) body {
+  background-color: #fffafa !important;
+}
 /* 記事本文の読みやすさ向上 */
 .prose p {
   margin-top: 1.5em !important;
