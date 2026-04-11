@@ -1,7 +1,7 @@
 ---
 title: "CSSにおけるプリミティブカラーとセマンティックカラーの違いと設計方法"
 date: 2026-03-31T00:00:00+09:00
-draft: false
+draft: true
 description: "CSS設計におけるプリミティブカラーとセマンティックカラーの違いを解説。状態別カラーやコンポーネント設計、Figma連携まで実務レベルで紹介します。"
 summary: "プリミティブカラーとセマンティックカラーの違いと使い分けを解説。hover・disabled対応やコンポーネント設計、Figma連携まで実例付きで紹介します。"
 slug: "css-color-design"
